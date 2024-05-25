@@ -345,6 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474827613531276120}
+  - component: {fileID: 7068375217223877649}
   m_Layer: 0
   m_Name: carte jaune level1 defense
   m_TagString: Untagged
@@ -371,6 +372,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7068375217223877649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231529282571011442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04f551939a68a544ba4e3b1847d815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackValue: 1
+  DefenseValue: 1
 --- !u!1 &3863568052198432338
 GameObject:
   m_ObjectHideFlags: 0
