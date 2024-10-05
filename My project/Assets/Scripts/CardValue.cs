@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class CardValue : MonoBehaviour
 {
-    [SerializeField] private float AttackValue =1;
-    [SerializeField] private float DefenseValue=1;
-    // Start is called before the first frame update
+    [SerializeField] private float AttackValue = 1;
+    [SerializeField] private float DefenseValue = 1;
+    
+    
     void Start()
     {
         
