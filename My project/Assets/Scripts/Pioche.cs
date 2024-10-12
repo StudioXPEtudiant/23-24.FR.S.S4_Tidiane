@@ -7,8 +7,9 @@ public class Pioche : MonoBehaviour
 	[SerializeField] private GameObject[] SpawnPoint;
 	[SerializeField] private bool[] CanSpawn;
 	[SerializeField] private GameObject[] CardLvl1;
-
-    private bool CanGiveCard = true;
+	
+	
+    public bool CanGiveCard = true;
 
 
     void Start()
@@ -20,6 +21,8 @@ public class Pioche : MonoBehaviour
 			{
 				CanSpawn[i] = false;
 			}
+
+		CanGiveCard = true;
     }
 
     
@@ -50,8 +53,11 @@ public class Pioche : MonoBehaviour
 						int randomCard = Random.Range(0, CardLvl1.Length);
 				 		Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
 						CanSpawn[availableSpawn] = true;
-					}			
+						
+					}	
+				
 			}
+		CanGiveCard = false;
 }
 
 
