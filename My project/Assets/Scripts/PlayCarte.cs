@@ -7,6 +7,7 @@ public class PlayCarte : MonoBehaviour
 	[SerializeField] private string targetTag; 
 	[SerializeField] private GameObject CardToPlay;
 	
+	private GameObject colision;
 
     void Start()
     {
@@ -32,12 +33,25 @@ public class PlayCarte : MonoBehaviour
 			transform.position = position;
 		}
 
-	 void OnCollisionEnter2D(Collision2D collision)
+	private void OnCollisionEnter2D(Collision2D collision)
 		{
-			//if (collision.gameObject.CompareTag("targetTag"))
-				//{
-					Debug.Log("w");
-				//}
+			colision = collision.gameObject;
+			
 		}
+
+	private void OnMouseUp()
+		{
+			if (colision != null)
+				{
+					Vector3 cardPos = CardToPlay.transform.position;
+
+					cardPos.x = colision.transform.position.x;
+					cardPos.y = colision.transform.position.y;
+					
+					CardToPlay.transform.position = cardPos;
+				
+					colision = null;
+                }        							
+		}
+		
 }
-//CardToPlay.
