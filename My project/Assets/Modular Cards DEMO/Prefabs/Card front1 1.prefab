@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5132695548655300034}
   - component: {fileID: 9071508963319113034}
+  - component: {fileID: 9194283374565320539}
   m_Layer: 0
   m_Name: Card front1 1
   m_TagString: Untagged
@@ -132,3 +133,17 @@ MonoBehaviour:
   SpawnPoint: []
   CanSpawn: 
   CardLvl1: []
+  CanGiveCard: 1
+--- !u!114 &9194283374565320539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193516224871459816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadbef51be7678d4784607201247f1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pioche: {fileID: 9071508963319113034}
