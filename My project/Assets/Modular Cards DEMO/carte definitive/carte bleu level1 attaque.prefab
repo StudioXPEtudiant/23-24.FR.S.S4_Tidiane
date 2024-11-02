@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: -8543362256029529948}
   m_Layer: 0
   m_Name: carte bleu level1 attaque
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

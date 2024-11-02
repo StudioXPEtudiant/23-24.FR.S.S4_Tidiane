@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3898888378771790117}
   m_Layer: 0
   m_Name: carte jaune level1 attaque
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Plateau
   CardToPlay: {fileID: 200114418971950898}
+  pioche: {fileID: 0}
 --- !u!61 &3526592234497306809
 BoxCollider2D:
   m_ObjectHideFlags: 0

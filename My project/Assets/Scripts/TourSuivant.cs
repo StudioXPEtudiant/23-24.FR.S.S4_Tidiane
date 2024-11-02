@@ -5,6 +5,8 @@ using UnityEngine;
 public class TourSuivant : MonoBehaviour
 {
 	public Pioche pioche;
+	public PiocheEnnemi piocheEnnemi;	
+
     void Start()
     {
      
@@ -19,8 +21,13 @@ public class TourSuivant : MonoBehaviour
     public void NextTour()
     {
 	    pioche.CanGiveCard = true;
-	    Debug.Log("true");
+
     }
+
+	public void NextTourEnnemi()
+	{
+		piocheEnnemi.CanGiveCard = true;
+	}
     
  
 }

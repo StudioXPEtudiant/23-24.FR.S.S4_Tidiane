@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: -5575091472316370493}
   m_Layer: 0
   m_Name: carte violet level1 defense
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
