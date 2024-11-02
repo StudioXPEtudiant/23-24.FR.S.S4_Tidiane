@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: -402844981139773918}
   m_Layer: 0
   m_Name: carte rouge level1 defense
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

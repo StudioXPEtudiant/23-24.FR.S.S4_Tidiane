@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Pioche : MonoBehaviour
 {
-	[SerializeField] private GameObject[] SpawnPoint;
+	public GameObject[] SpawnPoint;
 	[SerializeField] private bool[] CanSpawn;
 	[SerializeField] private GameObject[] CardLvl1;
-	
-	
+
+	private GameObject SpawnCard;	
     public bool CanGiveCard = true;
 
 
@@ -51,9 +51,8 @@ public class Pioche : MonoBehaviour
 				if (availableSpawn != -1)
 					{
 						int randomCard = Random.Range(0, CardLvl1.Length);
-				 		Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
+				 		 Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
 						CanSpawn[availableSpawn] = true;
-						
 					}	
 				
 			}
