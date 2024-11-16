@@ -380,7 +380,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5493375771224873128}
-  - component: {fileID: -5860159170175853099}
   m_Layer: 0
   m_Name: carte violet level2 attaque
   m_TagString: Untagged
@@ -407,20 +406,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5860159170175853099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8400186428470566530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a04f551939a68a544ba4e3b1847d815f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackValue: 13
-  DefenseValue: 5
 --- !u!1 &8672380327995267136
 GameObject:
   m_ObjectHideFlags: 0

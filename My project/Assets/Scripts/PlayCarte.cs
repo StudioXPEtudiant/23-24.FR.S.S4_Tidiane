@@ -6,7 +6,8 @@ public class PlayCarte : MonoBehaviour
 {
 	[SerializeField] private string targetTag; 
 	[SerializeField] private GameObject CardToPlay;
-	
+	[SerializeField] private bool[] IfCard;	
+
 	private GameObject colision;
 	private Vector2 Saved;	
 	private bool PosCard;
@@ -52,6 +53,12 @@ public class PlayCarte : MonoBehaviour
 				{
 					colision = null;
 				}
+
+			if (collision.gameObject.tag == "EnnemiCard")
+				{
+					colision = null;
+				}
+
 		}
 
 	private void OnMouseUp()
@@ -72,6 +79,9 @@ public class PlayCarte : MonoBehaviour
 									colision = null;
 									PosCard = false;
 									CanMoveCard = false;
+
+									
+
 								}
                			}        
 

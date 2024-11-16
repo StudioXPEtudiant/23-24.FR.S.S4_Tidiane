@@ -261,7 +261,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 956154065323421945}
-  - component: {fileID: -6384960895607395637}
   - component: {fileID: 2465298619237225508}
   - component: {fileID: 2199681631261438211}
   - component: {fileID: 6836636991430909300}
@@ -280,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3885445575196735187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4060287, y: -0.2726993, z: 0}
+  m_LocalPosition: {x: 5.6280003, y: 1.8599997, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -291,20 +290,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6384960895607395637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3885445575196735187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a04f551939a68a544ba4e3b1847d815f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackValue: 4
-  DefenseValue: 6
 --- !u!61 &2465298619237225508
 BoxCollider2D:
   m_ObjectHideFlags: 0
