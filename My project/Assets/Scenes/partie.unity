@@ -346,6 +346,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1043961382}
+        m_TargetAssemblyTypeName: PlayCarteEnnemi, Assembly-CSharp
+        m_MethodName: FirstTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &102352692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1669,6 +1681,8 @@ MonoBehaviour:
   - {fileID: 349370475698506116, guid: 8b7ddd6e0e2c4e44f9813d314241f68c, type: 3}
   - {fileID: 5354269334163378435, guid: 34ccae0d9f7e9de4096efac9f015147e, type: 3}
   CanGiveCard: 1
+  playCarteEnnemi: {fileID: 1043961382}
+  CardInstantiate: {fileID: 9197893473822668141, guid: be055fb760e710d48ba208f411dcef9e, type: 3}
 --- !u!1 &814996866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2094,58 @@ Transform:
   m_Father: {fileID: 846353054}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1043961380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043961381}
+  - component: {fileID: 1043961382}
+  m_Layer: 0
+  m_Name: adevseraire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043961381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043961380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1904087581}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1043961382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043961380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04f551939a68a544ba4e3b1847d815f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPointEnnemi:
+  - {fileID: 81412451}
+  - {fileID: 1784310110}
+  - {fileID: 1448741070}
+  - {fileID: 955370984}
+  CanSpawn: 00000000
+  EnnemiHand: []
+  piocheEnnemi: {fileID: 561578131}
 --- !u!1 &1065153217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3135,6 +3201,7 @@ Transform:
   m_Children:
   - {fileID: 2042428682}
   - {fileID: 308838811}
+  - {fileID: 1043961381}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

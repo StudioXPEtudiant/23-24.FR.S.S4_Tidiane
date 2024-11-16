@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4209143973833521432}
-  - component: {fileID: -7118806525389201357}
   - component: {fileID: 6052689154026798078}
   - component: {fileID: 3526592234497306809}
   - component: {fileID: 3898888378771790117}
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200114418971950898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5938749, y: -0.3838219, z: 0}
+  m_LocalPosition: {x: 5.6280003, y: 1.8599997, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39,20 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7118806525389201357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200114418971950898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a04f551939a68a544ba4e3b1847d815f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackValue: 6
-  DefenseValue: 4
 --- !u!114 &6052689154026798078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +52,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Plateau
   CardToPlay: {fileID: 200114418971950898}
-  pioche: {fileID: 0}
 --- !u!61 &3526592234497306809
 BoxCollider2D:
   m_ObjectHideFlags: 0

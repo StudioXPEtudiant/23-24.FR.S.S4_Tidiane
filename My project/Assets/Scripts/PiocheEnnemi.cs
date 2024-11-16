@@ -6,11 +6,15 @@ public class PiocheEnnemi : MonoBehaviour
 {
     [SerializeField] private GameObject[] SpawnPointEnnemi;
     [SerializeField] private bool[] CanSpawn;
-    [SerializeField] private GameObject[] CardLvl1;
+    public GameObject[] CardLvl1;
 
     public bool CanGiveCard = true;
+	public Vector2 Saved;        
+
     private int NumberOfCard = 0;
-	private GameObject CardInstantiate;
+	public PlayCarteEnnemi playCarteEnnemi;
+
+	public GameObject CardInstantiate;
 
     void Start()
     {
@@ -40,7 +44,7 @@ public class PiocheEnnemi : MonoBehaviour
                            				{
                                				availableSpawn = i;
        
-                          					}
+				                        }
                       				}
        
                        if (availableSpawn != -1)
@@ -49,10 +53,13 @@ public class PiocheEnnemi : MonoBehaviour
                           CardInstantiate = Instantiate(CardLvl1[randomCard], SpawnPointEnnemi[availableSpawn].transform.position,
                                Quaternion.identity);
 							CardInstantiate.tag = "EnnemiCard";
+							Saved = CardInstantiate.transform.position;
                            CanSpawn[availableSpawn] = true;
+						StartCoroutine(playCarteEnnemi.EnnemiTurn());
                        }
                    }
        			CanGiveCard = false;
+		       
     }
     
 
