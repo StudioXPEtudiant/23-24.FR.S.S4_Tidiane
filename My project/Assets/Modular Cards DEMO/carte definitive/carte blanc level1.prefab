@@ -861,6 +861,8 @@ GameObject:
   - component: {fileID: 4091435271929618446}
   - component: {fileID: 7447564332638664043}
   - component: {fileID: 5704922902336977432}
+  - component: {fileID: 2160050569447717211}
+  - component: {fileID: 314402160268877669}
   m_Layer: 0
   m_Name: carte blanc level1
   m_TagString: card
@@ -931,6 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pioche: {fileID: 0}
   piocheEnnemi: {fileID: 0}
+  attackScript: {fileID: 0}
 --- !u!114 &7447564332638664043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,8 +947,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Plateau
-  CardToPlay: {fileID: 9197893473822668141}
   IfCard: 
+  origin: {x: 0, y: 1}
+  Tag: EnnemiCard
+  attackScript: {fileID: 2160050569447717211}
+  CardToPlay: {fileID: 9197893473822668141}
+  CanMove: 0
 --- !u!50 &5704922902336977432
 Rigidbody2D:
   serializedVersion: 4
@@ -967,3 +974,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2160050569447717211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197893473822668141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 4
+  CardHealth: 4
+  ButtonTourSuivant: {fileID: 0}
+  tourSuivant: {fileID: 0}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  playCarte: {fileID: 7447564332638664043}
+  ActualHealth: 0
+  CanMakeDamage: 0
+  tag: 
+--- !u!114 &314402160268877669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197893473822668141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 4
+  CardHealth: 4
+  CardEnnemiToPlay: {fileID: 9197893473822668141}
+  origin: {x: 0, y: -1}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarteEnnemi: {fileID: 0}
+  Tag: card
+  CanShowRaycast: 0
+  ActualHealth: 0

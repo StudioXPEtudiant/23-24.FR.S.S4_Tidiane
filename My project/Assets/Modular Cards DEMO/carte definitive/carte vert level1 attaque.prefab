@@ -799,8 +799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardDamage: 5
-  CardHealth: 8
+  CardDamage: 6
+  CardHealth: 4
   ButtonTourSuivant: {fileID: 0}
   tourSuivant: {fileID: 0}
   makeDamage:
@@ -822,8 +822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardDamage: 5
-  CardHealth: 8
+  CardDamage: 6
+  CardHealth: 4
   CardEnnemiToPlay: {fileID: 5690200463508217218}
   origin: {x: 0, y: -1}
   makeDamage:
