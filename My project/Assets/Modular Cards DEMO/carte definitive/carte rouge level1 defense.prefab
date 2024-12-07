@@ -264,6 +264,8 @@ GameObject:
   - component: {fileID: 7015715789856135176}
   - component: {fileID: 2264109386742796627}
   - component: {fileID: -402844981139773918}
+  - component: {fileID: 8463454123093619482}
+  - component: {fileID: -247838313879188514}
   m_Layer: 0
   m_Name: carte rouge level1 defense
   m_TagString: card
@@ -329,6 +331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Plateau
+  IfCard: 
+  origin: {x: 0, y: 1}
+  Tag: EnnemiCard
+  attackScript: {fileID: 8463454123093619482}
   CardToPlay: {fileID: 5339731875521947880}
 --- !u!50 &-402844981139773918
 Rigidbody2D:
@@ -351,6 +357,61 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &8463454123093619482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339731875521947880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  ActualHealth: 0
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8463454123093619482}
+        m_TargetAssemblyTypeName: AttackScript, Assembly-CSharp
+        m_MethodName: MakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CanMakeDamage: 0
+  playCarte: {fileID: 2264109386742796627}
+--- !u!114 &-247838313879188514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339731875521947880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  ActualHealth: 0
+  CardEnnemiToPlay: {fileID: 5339731875521947880}
+  origin: {x: 0, y: -1}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarteEnnemi: {fileID: 0}
+  Tag: card
 --- !u!1 &5695554289051770602
 GameObject:
   m_ObjectHideFlags: 0

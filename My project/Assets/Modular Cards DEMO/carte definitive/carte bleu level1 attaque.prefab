@@ -215,6 +215,8 @@ GameObject:
   - component: {fileID: 5694936558654550576}
   - component: {fileID: -6438783971683146209}
   - component: {fileID: -8543362256029529948}
+  - component: {fileID: -8287446316578309683}
+  - component: {fileID: -4785561380425451435}
   m_Layer: 0
   m_Name: carte bleu level1 attaque
   m_TagString: card
@@ -254,6 +256,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Plateau
+  IfCard: 
+  origin: {x: 0, y: 1}
+  Tag: EnnemiCard
+  attackScript: {fileID: -8287446316578309683}
   CardToPlay: {fileID: 6983751038419607460}
 --- !u!61 &-6438783971683146209
 BoxCollider2D:
@@ -302,6 +308,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-8287446316578309683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983751038419607460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 5
+  CardHealth: 7
+  ButtonTourSuivant: {fileID: 0}
+  tourSuivant: {fileID: 0}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  playCarte: {fileID: 5694936558654550576}
+  ActualHealth: 0
+  CanMakeDamage: 0
+--- !u!114 &-4785561380425451435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983751038419607460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 5
+  CardHealth: 7
+  CardEnnemiToPlay: {fileID: 6983751038419607460}
+  origin: {x: 0, y: -1}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarteEnnemi: {fileID: 0}
+  Tag: card
+  CanShowRaycast: 0
+  ActualHealth: 0
 --- !u!1 &7152550104491480215
 GameObject:
   m_ObjectHideFlags: 0

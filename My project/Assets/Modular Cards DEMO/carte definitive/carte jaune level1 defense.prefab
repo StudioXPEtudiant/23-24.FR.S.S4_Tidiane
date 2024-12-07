@@ -348,7 +348,9 @@ GameObject:
   - component: {fileID: 4900431903726567054}
   - component: {fileID: 5254964600893381401}
   - component: {fileID: -8409397151682975762}
-  m_Layer: 0
+  - component: {fileID: 6174261853304131310}
+  - component: {fileID: 6179932489296879621}
+  m_Layer: 6
   m_Name: carte jaune level1 defense
   m_TagString: card
   m_Icon: {fileID: 0}
@@ -413,6 +415,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Plateau
+  IfCard: 
+  origin: {x: 0, y: 1}
+  Tag: EnnemiCard
+  attackScript: {fileID: 6174261853304131310}
   CardToPlay: {fileID: 3231529282571011442}
 --- !u!50 &-8409397151682975762
 Rigidbody2D:
@@ -435,6 +441,61 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6174261853304131310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231529282571011442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  ActualHealth: 0
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6174261853304131310}
+        m_TargetAssemblyTypeName: AttackScript, Assembly-CSharp
+        m_MethodName: MakeDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CanMakeDamage: 0
+  playCarte: {fileID: 5254964600893381401}
+--- !u!114 &6179932489296879621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231529282571011442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  ActualHealth: 0
+  CardEnnemiToPlay: {fileID: 3231529282571011442}
+  origin: {x: 0, y: -1}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarteEnnemi: {fileID: 0}
+  Tag: card
 --- !u!1 &3863568052198432338
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class PiocheEnnemi : MonoBehaviour
     
     void Update()
     {
-       if (CanGiveCard)
+       if (CanGiveCard == true)
                    		{
        
                       			int randomSpawn = Random.Range(0, SpawnPointEnnemi.Length);
@@ -57,8 +57,9 @@ public class PiocheEnnemi : MonoBehaviour
                            CanSpawn[availableSpawn] = true;
 						StartCoroutine(playCarteEnnemi.EnnemiTurn());
                        }
+					CanGiveCard = false;
                    }
-       			CanGiveCard = false;
+       			
 		       
     }
     

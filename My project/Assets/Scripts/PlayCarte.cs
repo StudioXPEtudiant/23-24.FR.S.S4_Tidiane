@@ -5,8 +5,16 @@ using UnityEngine;
 public class PlayCarte : MonoBehaviour
 {
 	[SerializeField] private string targetTag; 
-	[SerializeField] private GameObject CardToPlay;
 	[SerializeField] private bool[] IfCard;	
+	[SerializeField] private Vector2 origin;
+	
+	
+
+	public RaycastHit2D hit;
+	public string Tag;
+	public AttackScript attackScript;
+	public GameObject CardToPlay;
+	public bool CanMove;
 
 	private GameObject colision;
 	private Vector2 Saved;	
@@ -18,12 +26,29 @@ public class PlayCarte : MonoBehaviour
       Saved = transform.position;
 	  PosCard = true;
 	  CanMoveCard = true;
+	CanMove = false;
     }
 
     
     void Update()
     {
-		
+	if (CanMoveCard == false)
+		{			
+			origin = (Vector2)transform.position + new Vector2 (0,1);
+
+			hit = Physics2D.Raycast(origin, Vector2.up, 3);
+            Debug.DrawRay(origin, Vector2.up * 3, Color.red);
+
+
+
+		//if (hit.collider != null)
+			//{
+            	//if (hit.transform.gameObject.tag == Tag)
+            		//{
+            			
+               		//}
+			//}
+		}	
     }
 
 	private void OnMouseDown()
@@ -67,8 +92,10 @@ public class PlayCarte : MonoBehaviour
 				{
 					if (colision != null)
 						{
+
 							if (CanMoveCard == true)
 								{
+									CanMove = true;	
 									Vector3 cardPos = CardToPlay.transform.position;
 
 									cardPos.x = colision.transform.position.x;
@@ -76,12 +103,16 @@ public class PlayCarte : MonoBehaviour
 					
 									CardToPlay.transform.position = cardPos;
 				
+									//PlayerPlayCarte.Add(CardToPlay);									
+
+									//attackScript.CanMakeDamage = true;
+	
+
+
 									colision = null;
 									PosCard = false;
 									CanMoveCard = false;
-
-									
-
+												
 								}
                			}        
 

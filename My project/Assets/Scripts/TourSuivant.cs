@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TourSuivant : MonoBehaviour
 {
+
 	public Pioche pioche;
 	public PiocheEnnemi piocheEnnemi;	
+	public AttackScript attackScript;
 
     void Start()
     {
-     
+
     }
 
     
@@ -29,5 +31,10 @@ public class TourSuivant : MonoBehaviour
 		piocheEnnemi.CanGiveCard = true;
 	}
     
- 
+	public void EndTour()
+	{ 
+	
+	}
+
+	
 }

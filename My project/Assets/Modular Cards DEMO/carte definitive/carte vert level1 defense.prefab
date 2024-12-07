@@ -551,6 +551,8 @@ GameObject:
   - component: {fileID: 3729270047807246919}
   - component: {fileID: 3432938643341203008}
   - component: {fileID: -6412929138697464102}
+  - component: {fileID: 376445634629383149}
+  - component: {fileID: -5335685366140713931}
   m_Layer: 0
   m_Name: carte vert level1 defense
   m_TagString: card
@@ -616,6 +618,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Plateau
+  IfCard: 
+  origin: {x: 0, y: 0}
+  Tag: EnnemiCard
+  attackScript: {fileID: 376445634629383149}
   CardToPlay: {fileID: 8762302000647445895}
 --- !u!50 &-6412929138697464102
 Rigidbody2D:
@@ -638,6 +644,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &376445634629383149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762302000647445895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarte: {fileID: 3432938643341203008}
+  ActualHealth: 0
+--- !u!114 &-5335685366140713931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762302000647445895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  CardEnnemiToPlay: {fileID: 8762302000647445895}
+  origin: {x: 0, y: -1}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarteEnnemi: {fileID: 0}
+  Tag: card
+  CanShowRaycast: 0
+  ActualHealth: 0
 --- !u!1 &8973939664242862981
 GameObject:
   m_ObjectHideFlags: 0

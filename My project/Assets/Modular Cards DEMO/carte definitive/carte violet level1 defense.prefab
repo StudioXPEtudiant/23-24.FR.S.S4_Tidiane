@@ -264,6 +264,8 @@ GameObject:
   - component: {fileID: 8582911147249460373}
   - component: {fileID: 2971309599350723192}
   - component: {fileID: -5575091472316370493}
+  - component: {fileID: -6634169712047957977}
+  - component: {fileID: 3692468735229820282}
   m_Layer: 0
   m_Name: carte violet level1 defense
   m_TagString: card
@@ -328,6 +330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Plateau
+  IfCard: 
+  origin: {x: 0, y: 0}
+  Tag: EnnemiCard
+  attackScript: {fileID: -6634169712047957977}
   CardToPlay: {fileID: 5354269334163378435}
 --- !u!50 &-5575091472316370493
 Rigidbody2D:
@@ -350,6 +356,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-6634169712047957977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354269334163378435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarte: {fileID: 2971309599350723192}
+  ActualHealth: 0
+--- !u!114 &3692468735229820282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354269334163378435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e142e5bf1e8401f4885979d3b7d04923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDamage: 3
+  CardHealth: 10
+  CardEnnemiToPlay: {fileID: 5354269334163378435}
+  origin: {x: 0, y: -1}
+  makeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  CanMakeDamage: 0
+  playCarteEnnemi: {fileID: 0}
+  Tag: card
+  CanShowRaycast: 0
+  ActualHealth: 0
 --- !u!1 &5580087539863859838
 GameObject:
   m_ObjectHideFlags: 0
