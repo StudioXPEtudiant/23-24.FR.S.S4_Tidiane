@@ -26,6 +26,7 @@ public class AttackScript : MonoBehaviour
         ActualHealth = CardHealth;
 		ButtonTourSuivant = GameObject.FindWithTag("tourSuivantButton");
 		CanClick = true;
+		//CanMakeDamage = false;
     }
 
     
@@ -43,7 +44,7 @@ public class AttackScript : MonoBehaviour
 								if (attackScriptEnnemi != null)
 									{
         								attackScriptEnnemi.ActualHealth -= CardDamage;
-
+										//Debug.log("true");
 									
 									}
 									CanMakeDamage = false;

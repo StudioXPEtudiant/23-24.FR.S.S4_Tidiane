@@ -23,6 +23,7 @@ public class AttackScriptEnnemi : MonoBehaviour
         ActualHealth = CardHealth;
        // CanShowRaycast = false;
         CanShowRaycast = true;
+		CanMakeDamage = false;
     }
 
     
@@ -56,7 +57,7 @@ public class AttackScriptEnnemi : MonoBehaviour
                  Destroy(gameObject);
              }
              
-        if (CardEnnemiToPlay.tag == "EnnemiCard")
+        if (gameObject.tag == "EnnemiCard")
         {
             
             origin = (Vector2)transform.position - new Vector2 (0,1);
@@ -64,20 +65,22 @@ public class AttackScriptEnnemi : MonoBehaviour
                         hit = Physics2D.Raycast(origin, Vector2.down, 3);
                         Debug.DrawRay(origin, Vector2.down * 3, Color.red);
             
-        if (CanShowRaycast == true)
-        {
+        //if (CanShowRaycast == true)
+        //{
             
             
             if (hit.collider != null)
             {
-                if (hit.transform.gameObject.tag == Tag)
+                if (hit.transform.gameObject.tag == "card")
                     {
-                        CanMakeDamage = true;
-                        CanShowRaycast = false;
+                       // CanMakeDamage = true;
+						//Debug.Log("true");
+						
+                        //CanShowRaycast = false;
                     }
-                 }
+                 //}
             } 
-        }
+      	}
     }
 
     private void CanRaycast()

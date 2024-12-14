@@ -1392,6 +1392,7 @@ MonoBehaviour:
   - {fileID: 8762302000647445895, guid: 0370d1c34d9324b45a9d7acbe47fa2ad, type: 3}
   - {fileID: 349370475698506116, guid: 8b7ddd6e0e2c4e44f9813d314241f68c, type: 3}
   - {fileID: 5354269334163378435, guid: 34ccae0d9f7e9de4096efac9f015147e, type: 3}
+  Spawn: 0
   CanGiveCard: 1
   Saved: {x: 0, y: 0}
   playCarteEnnemi: {fileID: 1043961382}
@@ -1817,9 +1818,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1043961381}
   - component: {fileID: 1043961382}
+  - component: {fileID: 1043961383}
   m_Layer: 0
   m_Name: adevseraire
-  m_TagString: Untagged
+  m_TagString: EnnemiCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1861,7 +1863,29 @@ MonoBehaviour:
   EnnemiHand: []
   CardPlay: []
   attackScriptEnnemi: {fileID: 0}
+  randomCard: 0
+  cardToPlay: {fileID: 0}
+  CanMove: 0
+  CanMoveCard: 0
   piocheEnnemi: {fileID: 561578131}
+--- !u!114 &1043961383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043961380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358c259186dcfed4cbd04329fd086ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListSize: 4
+  EnnemiPlayCarte: []
+  EnnemiHand: []
+  piocheEnnemi: {fileID: 561578131}
+  pioche: {fileID: 8202847156005279687}
+  playCarteEnnemi: {fileID: 1043961382}
 --- !u!1 &1065153217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,6 +2090,7 @@ MonoBehaviour:
   PlayerPlayCarte: []
   PlayerHand: []
   pioche: {fileID: 8202847156005279687}
+  piocheEnnemi: {fileID: 561578131}
 --- !u!1 &1284288782
 GameObject:
   m_ObjectHideFlags: 0

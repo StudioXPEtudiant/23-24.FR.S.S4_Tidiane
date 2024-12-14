@@ -22,13 +22,13 @@ public class TourSuivant : MonoBehaviour
 
     public void NextTour()
     {
-	    pioche.CanGiveCard = true;
+	    //pioche.CanGiveCard = true;
 
     }
 
 	public void NextTourEnnemi()
 	{
-		piocheEnnemi.CanGiveCard = true;
+		//piocheEnnemi.CanGiveCard = true;
 	}
     
 	public void EndTour()

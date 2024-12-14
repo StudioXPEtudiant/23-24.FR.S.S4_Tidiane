@@ -6,14 +6,16 @@ public class ListOfPlayerCard : MonoBehaviour
 {
     [SerializeField] private GameObject[] CarteToPlay;
     [SerializeField] private float ListSize = 4;
+    [SerializeField] private bool CanGiveCardEnnemi;
+    
     public List<GameObject> PlayerPlayCarte = new List<GameObject>();	
     public List<GameObject> PlayerHand = new List<GameObject>();
     public Pioche pioche;
-
+	public PiocheEnnemi piocheEnnemi;
 
     void Start()
     {
-        
+        CanGiveCardEnnemi = false;
     }
 
    
@@ -35,23 +37,43 @@ public class ListOfPlayerCard : MonoBehaviour
                    if (playCarte.CanMove == true )
                    {
                        PlayerPlayCarte.Add(playCarte.CardToPlay);
+						PlayerHand.Remove(pioche.SpawnCard);
                        playCarte.CanMove = false;
+                        CanGiveCardEnnemi = true;
                    }
 
                }
 
-             
+            
                 
     }
 
     public void ListCard()
-    {
-        foreach (GameObject obj in PlayerPlayCarte)
-        {
-            if (obj != null && obj.tag == "card")
+    { 
+        
+            foreach (GameObject obj in PlayerPlayCarte)
             {
-                obj.GetComponent<AttackScript>().CanMakeDamage = true;
+                if (obj != null && obj.tag == "card")
+                {
+                    obj.GetComponent<AttackScript>().CanMakeDamage = true;
+                    if (CanGiveCardEnnemi == true)
+                    {
+                        StartCoroutine(EnnemiCanPlay());
+                        CanGiveCardEnnemi = false;
+                    }
+                }
             }
-        }
     }
+
+public IEnumerator EnnemiCanPlay()
+{
+	yield return new WaitForSeconds(2);
+	
+	piocheEnnemi.CanGiveCard = true;
 }
+
+
+
+}
+
+

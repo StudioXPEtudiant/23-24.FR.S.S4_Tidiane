@@ -13,9 +13,14 @@ public class PlayCarteEnnemi : MonoBehaviour
     public List<GameObject> CardPlay = new List<GameObject>();
    
     public AttackScriptEnnemi attackScriptEnnemi;
+
+    public int randomCard;
+    public GameObject cardToPlay;
+    
+    public bool CanMove = false;
     
     private bool CanGiveCard = true;
-    private bool CanMoveCard = false;
+    public bool CanMoveCard = false;
     private int availableSpawn = -1;
     
     private float TimeBeforePlayCarte = 0.1f;
@@ -34,6 +39,7 @@ public class PlayCarteEnnemi : MonoBehaviour
         }
         CanGiveCard = false;
         CanMoveCard = false;
+        CanMove = false;
     }
 
     
@@ -50,7 +56,8 @@ public class PlayCarteEnnemi : MonoBehaviour
    public IEnumerator EnnemiTurn()
     { 
         //Saved = transform.position;
-       yield return new WaitForSeconds(3);
+       yield return new WaitForSeconds(2);
+      // CanMove = true;
         EnnemiHand.Add(piocheEnnemi.CardInstantiate);
         CanGiveCard = true;
       
@@ -73,26 +80,27 @@ public class PlayCarteEnnemi : MonoBehaviour
              if (availableSpawn != -1)
              {
                  CanMoveCard = true;
-                 
-                if (!CardPlay.Contains(cardToPlay))
+                 CanMove = true;
+                if (!CardPlay.Contains(piocheEnnemi.CardInstantiate))
                                {
                                    if (CardPlay.Count < ListSize)
                                    {
-                                       cardToPlay.transform.position = SpawnPointEnnemi[availableSpawn].transform.position;
-                                       CardPlay.Add(cardToPlay); 
+                                       piocheEnnemi.CardInstantiate.transform.position = SpawnPointEnnemi[availableSpawn].transform.position;
+                                       CardPlay.Add(piocheEnnemi.CardInstantiate); 
                                        EnnemiHand.RemoveAt(randomCard);
                                        CanSpawn[availableSpawn] = true;
+                                       
                                    }
                                                              
                                    }
-                          
+                          //cardToPlay
           
              }
              
            if (CardPlay.Count > ListSize)
            {
                CanMoveCard = false;
-               EnnemiHand.Add(cardToPlay);
+               EnnemiHand.Add(piocheEnnemi.CardInstantiate);
                CardPlay.RemoveAt(randomCard);
                cardToPlay.transform.position = piocheEnnemi.Saved;
                

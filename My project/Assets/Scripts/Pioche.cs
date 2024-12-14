@@ -12,6 +12,7 @@ public class Pioche : MonoBehaviour
     public bool CanGiveCard = true;
     public ListOfPlayerCard listOfPlayerCard;
 	public bool Spawn;
+	
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class Pioche : MonoBehaviour
 				
 				int randomSpawn = Random.Range(0, SpawnPoint.Length);
 				int availableSpawn = -1;
-					
+				
 				for (int i = 0; i < SpawnPoint.Length; i++)
 					{
 						if (!CanSpawn[i])
@@ -54,6 +55,7 @@ public class Pioche : MonoBehaviour
 					{
 						int randomCard = Random.Range(0, CardLvl1.Length);
 				 	SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
+					
 						CanSpawn[availableSpawn] = true;
 						Spawn = true;
 					

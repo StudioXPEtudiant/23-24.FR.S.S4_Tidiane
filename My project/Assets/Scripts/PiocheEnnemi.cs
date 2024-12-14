@@ -7,7 +7,7 @@ public class PiocheEnnemi : MonoBehaviour
     [SerializeField] private GameObject[] SpawnPointEnnemi;
     [SerializeField] private bool[] CanSpawn;
     public GameObject[] CardLvl1;
-
+	public bool Spawn;
     public bool CanGiveCard = true;
 	public Vector2 Saved;        
 
@@ -27,6 +27,7 @@ public class PiocheEnnemi : MonoBehaviour
                 CanSpawn[i] = false;
             }
 		CanGiveCard = false;
+		Spawn = false;
     }
 
     
@@ -55,6 +56,7 @@ public class PiocheEnnemi : MonoBehaviour
 							CardInstantiate.tag = "EnnemiCard";
 							Saved = CardInstantiate.transform.position;
                            CanSpawn[availableSpawn] = true;
+							Spawn = true;
 						StartCoroutine(playCarteEnnemi.EnnemiTurn());
                        }
 					CanGiveCard = false;

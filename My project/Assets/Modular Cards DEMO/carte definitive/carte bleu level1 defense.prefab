@@ -513,7 +513,7 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: -1673432296751451982}
   CardToPlay: {fileID: 3885445575196735187}
-  IfCard: 
+  CanMove: 0
 --- !u!50 &6836636991430909300
 Rigidbody2D:
   serializedVersion: 4
@@ -549,7 +549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 3
   CardHealth: 10
-  ActualHealth: 0
+  ButtonTourSuivant: {fileID: 0}
+  tourSuivant: {fileID: 0}
   makeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -565,8 +566,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  CanMakeDamage: 0
   playCarte: {fileID: 2199681631261438211}
+  ActualHealth: 0
+  CanMakeDamage: 0
+  tag: 
 --- !u!114 &-8966077714165175444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,15 +584,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 3
   CardHealth: 10
-  ActualHealth: 0
   CardEnnemiToPlay: {fileID: 3885445575196735187}
   origin: {x: 0, y: -1}
   makeDamage:
     m_PersistentCalls:
       m_Calls: []
-  CanMakeDamage: 0
+  CanMakeDamage: 1
   playCarteEnnemi: {fileID: 0}
   Tag: card
+  CanShowRaycast: 0
+  ActualHealth: 0
 --- !u!1 &4117115599719706641
 GameObject:
   m_ObjectHideFlags: 0
