@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 public class AttackScriptEnnemi : MonoBehaviour
 {
     [SerializeField] private float CardDamage;
     [SerializeField] private float CardHealth;	
-    
-    [SerializeField] private GameObject CardEnnemiToPlay;
+   
+   
     [SerializeField] private Vector2 origin;
-    
+
+    [SerializeField] private Text ShowCardHealth;
+
+    public GameObject CardEnnemiToPlay;
     public UnityEvent makeDamage;
     public bool CanMakeDamage = false;
     public PlayCarteEnnemi playCarteEnnemi;
@@ -17,7 +21,10 @@ public class AttackScriptEnnemi : MonoBehaviour
     public string Tag;
     public bool CanShowRaycast = false;
     public float ActualHealth;
-    
+	public ListOfEnnemiCard listOfEnnemiCard;
+	public PiocheEnnemi piocheEnnemi;    
+	public bool CanDestroy;
+
     void Start()
     {
         ActualHealth = CardHealth;
@@ -47,16 +54,19 @@ public class AttackScriptEnnemi : MonoBehaviour
                 }
             }
         }
-  if (ActualHealth < 0)
-             {
-                 Destroy(gameObject);
-             }
+		if (CanDestroy == true)
+			{
+  				//if (ActualHealth < 0)
+             	//{
+             		Destroy(gameObject);
+             //	}
             
-             if (ActualHealth == 0)
-             {
-                 Destroy(gameObject);
-             }
-             
+             	//if (ActualHealth == 0)
+             //	{
+               	//Destroy(gameObject);
+             	//}
+			}          
+   
         if (gameObject.tag == "EnnemiCard")
         {
             

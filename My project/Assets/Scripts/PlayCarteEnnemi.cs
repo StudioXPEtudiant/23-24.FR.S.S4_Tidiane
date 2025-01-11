@@ -6,12 +6,13 @@ public class PlayCarteEnnemi : MonoBehaviour
 {
    
     [SerializeField] private GameObject[] SpawnPointEnnemi;
-    [SerializeField] private bool[] CanSpawn;
+
     [SerializeField] private float ListSize = 4;
     
     public List<GameObject> EnnemiHand = new List<GameObject>();
     public List<GameObject> CardPlay = new List<GameObject>();
-   
+    public bool[] CanSpawn;
+    
     public AttackScriptEnnemi attackScriptEnnemi;
 
     public int randomCard;
@@ -21,7 +22,7 @@ public class PlayCarteEnnemi : MonoBehaviour
     
     private bool CanGiveCard = true;
     public bool CanMoveCard = false;
-    private int availableSpawn = -1;
+    public int availableSpawn = -1;
     
     private float TimeBeforePlayCarte = 0.1f;
     
@@ -110,12 +111,6 @@ public class PlayCarteEnnemi : MonoBehaviour
         }
         CanGiveCard = false;
         CanMoveCard = false;
-
-        
-        
         
     }
-    
-    
-    
 }

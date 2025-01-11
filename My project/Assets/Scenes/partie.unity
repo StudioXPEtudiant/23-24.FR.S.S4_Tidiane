@@ -1283,11 +1283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.7
+      value: -6.700012
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -16.6
+      value: -16.600006
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1976,15 +1976,16 @@ MonoBehaviour:
   - {fileID: 1784310110}
   - {fileID: 1448741070}
   - {fileID: 955370984}
-  CanSpawn: 00000000
   ListSize: 4
   EnnemiHand: []
   CardPlay: []
+  CanSpawn: 00000000
   attackScriptEnnemi: {fileID: 0}
   randomCard: 0
   cardToPlay: {fileID: 0}
   CanMove: 0
   CanMoveCard: 0
+  availableSpawn: -1
   piocheEnnemi: {fileID: 561578131}
 --- !u!114 &1043961383
 MonoBehaviour:
@@ -2004,6 +2005,7 @@ MonoBehaviour:
   piocheEnnemi: {fileID: 561578131}
   pioche: {fileID: 8202847156005279687}
   playCarteEnnemi: {fileID: 1043961382}
+  listOfPlayerCard: {fileID: 0}
 --- !u!1 &1065153217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarteToPlay: []
   ListSize: 4
+  CanGiveCardEnnemi: 0
   PlayerPlayCarte: []
   PlayerHand: []
   pioche: {fileID: 8202847156005279687}
@@ -3593,11 +3596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.7
+      value: 6.700012
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.6
+      value: 16.600006
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
