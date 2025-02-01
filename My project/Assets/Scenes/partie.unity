@@ -243,6 +243,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
   m_PrefabInstance: {fileID: 8745003492183201706}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &106213263
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8202847156005279686}
+    m_Modifications:
+    - target: {fileID: 1232859030603536874, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_Name
+      value: carte pioche rouge (animation)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
 --- !u!1 &152637515
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +499,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 581453866}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8202847156005279687}
         m_TargetAssemblyTypeName: Pioche, Assembly-CSharp
         m_MethodName: TakeCard
@@ -1431,6 +1500,32 @@ MonoBehaviour:
   Saved: {x: 0, y: 0}
   playCarteEnnemi: {fileID: 1043961382}
   CardInstantiate: {fileID: 9197893473822668141, guid: be055fb760e710d48ba208f411dcef9e, type: 3}
+--- !u!1 &581453863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1232859030603536874, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+  m_PrefabInstance: {fileID: 106213263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &581453866
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581453863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 560e597b0d4400d499b46b33ab8a74d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &793016948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,15 +2071,16 @@ MonoBehaviour:
   - {fileID: 1784310110}
   - {fileID: 1448741070}
   - {fileID: 955370984}
-  CanSpawn: 00000000
   ListSize: 4
   EnnemiHand: []
   CardPlay: []
+  CanSpawn: 00000000
   attackScriptEnnemi: {fileID: 0}
   randomCard: 0
   cardToPlay: {fileID: 0}
   CanMove: 0
   CanMoveCard: 0
+  availableSpawn: -1
   piocheEnnemi: {fileID: 561578131}
 --- !u!114 &1043961383
 MonoBehaviour:
@@ -3595,7 +3691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.3
+      value: 4.299988
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3952,11 +4048,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 54.8
+      value: 54.799988
       objectReference: {fileID: 0}
     - target: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.3
+      value: 3.300003
       objectReference: {fileID: 0}
     - target: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
