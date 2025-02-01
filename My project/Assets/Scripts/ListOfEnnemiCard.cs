@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ListOfEnnemiCard : MonoBehaviour
 {
-    [SerializeField] private float ListSize = 4;
+    [SerializeField] private float ListSize = 5;
     public List<GameObject> EnnemiPlayCarte = new List<GameObject>();	
     public List<GameObject> EnnemiHand = new List<GameObject>();
     public PiocheEnnemi piocheEnnemi;
@@ -12,9 +12,11 @@ public class ListOfEnnemiCard : MonoBehaviour
 	public PlayCarteEnnemi playCarteEnnemi;
     public ListOfPlayerCard listOfPlayerCard;
 
+	public bool CanDamage;
+
 	void Start()
     {
-        
+        CanDamage = false;
     }
 
    
@@ -22,7 +24,7 @@ public class ListOfEnnemiCard : MonoBehaviour
     {
         if (piocheEnnemi.Spawn == true)
         {
-            if (EnnemiHand.Count < ListSize)
+            if (EnnemiHand.Count <= ListSize)
             {
                 EnnemiHand.Add(piocheEnnemi.CardInstantiate);
                 piocheEnnemi.Spawn = false;
@@ -38,7 +40,7 @@ public class ListOfEnnemiCard : MonoBehaviour
                   //{
                        if (playCarteEnnemi.CanMove == true )
                                   {
-                                      EnnemiPlayCarte.Add(piocheEnnemi.CardInstantiate);
+                                      EnnemiPlayCarte.Add(playCarteEnnemi.cardToPlay);
                                       EnnemiHand.Remove(piocheEnnemi.CardInstantiate);
                                       playCarteEnnemi.CanMove = false;
 										ListCardEnnemi();
@@ -52,50 +54,68 @@ public class ListOfEnnemiCard : MonoBehaviour
         AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
             	if (obj != null && obj.tag == "EnnemiCard")
             	{
-                					
 					if(attackScriptEnnemi.ActualHealth == 0)
 					{
-						Debug.Log("true");
-						EnnemiPlayCarte.Remove(piocheEnnemi.CardInstantiate);
-						playCarteEnnemi.CardPlay.Remove(piocheEnnemi.CardInstantiate);
-
-						if(playCarteEnnemi.CardPlay.Remove(piocheEnnemi.CardInstantiate));
-						{
-							playCarteEnnemi.CanSpawn[playCarteEnnemi.availableSpawn] = false;
-						}
-
+						///Debug.Log("true");
+						EnnemiPlayCarte.Remove(attackScriptEnnemi.CardEnnemiToPlay);
+						playCarteEnnemi.CardPlay.Remove(attackScriptEnnemi.CardEnnemiToPlay);
+//playCarteEnnemi.CardPlay.Remove(playCarteEnnemi.cardToPlay)
+			
 						attackScriptEnnemi.CanDestroy = true;
-                	}	
+                	}
+					
+		            if (playCarteEnnemi.ReferenceCase[1] == null) 
+					 {//0
+						playCarteEnnemi.CanSpawn[0] = false;
+					 }
+		            
+		            if (playCarteEnnemi.AssigneGameObject[1] == null)
+		            {
+			            playCarteEnnemi.CanSpawn[1] = false;
+			            
+		            }
+		            
+		            if (playCarteEnnemi.AssigneGameObject[2] == null)
+		            {//1
+			            playCarteEnnemi.CanSpawn[2] = false;
+		            }
 
-					if(attackScriptEnnemi.ActualHealth <= 0)
+		            if (playCarteEnnemi.AssigneGameObject[3] == null)
+		            {//2
+			            playCarteEnnemi.CanSpawn[3] = false;
+		            }
+		            
+					if (attackScriptEnnemi.ActualHealth <= 0)
 					{
-						Debug.Log("false");
-						EnnemiPlayCarte.Remove(piocheEnnemi.CardInstantiate);
-						playCarteEnnemi.CardPlay.Remove(piocheEnnemi.CardInstantiate);
-
-						if(playCarteEnnemi.CardPlay.Remove(piocheEnnemi.CardInstantiate));
-						{
-							playCarteEnnemi.CanSpawn[playCarteEnnemi.availableSpawn] = false;
-						}
-
+						EnnemiPlayCarte.Remove(attackScriptEnnemi.CardEnnemiToPlay);
+						playCarteEnnemi.CardPlay.Remove(attackScriptEnnemi.CardEnnemiToPlay);
+//piocheEnnemi.CardInstantiate
+	
 						attackScriptEnnemi.CanDestroy = true;
-                	}	
-				}
+		            }
+					
+
+	            }
 		}
-    }
+    }//playCarteEnnemi.CardPlay.Remove(playCarteEnnemi.cardToPlay)
 
     private void ListCardEnnemi()
     {
-        foreach (GameObject obj in EnnemiPlayCarte)
-        {
-			AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
-            	if (obj != null && obj.tag == "EnnemiCard")
-            	{
+		//if(CanDamage == true)
+		//{
+        	foreach (GameObject obj in EnnemiPlayCarte)
+        	{
+				AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
+            		if (obj != null && obj.tag == "EnnemiCard")
+            		{
+						Debug.Log("ok");
                 		attackScriptEnnemi.CanMakeDamage = true;
 				
 						StartCoroutine(PlayerCanPlay());
-         	   }
-        }
+						//CanDamage = false;
+         	  		}
+        	}
+		//}
     }
     
     public IEnumerator PlayerCanPlay()

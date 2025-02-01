@@ -693,6 +693,9 @@ MonoBehaviour:
   CardDamage: 6
   CardHealth: 10
   ButtonTourSuivant: {fileID: 0}
+  CardHealthGameObject: {fileID: 6154591576990879176}
+  CardAttackGameObject: {fileID: 8637880259811475064}
+  ThisCard: {fileID: 6983751038419607460}
   tourSuivant: {fileID: 0}
   makeDamage:
     m_PersistentCalls:
@@ -701,6 +704,8 @@ MonoBehaviour:
   ActualHealth: 0
   CanMakeDamage: 0
   tag: 
+  CardHealthText: {fileID: 0}
+  CardAttackText: {fileID: 0}
 --- !u!114 &-4785561380425451435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +720,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 6
   CardHealth: 10
+  CardHealthGameObjectEnnemi: {fileID: 6154591576990879176}
+  CardAttackGameObjectEnnemi: {fileID: 8637880259811475064}
+  CardHealthTextEnnemi: {fileID: 0}
+  CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
   CardEnnemiToPlay: {fileID: 6983751038419607460}

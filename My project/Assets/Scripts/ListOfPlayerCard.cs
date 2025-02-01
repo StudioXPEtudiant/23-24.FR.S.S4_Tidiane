@@ -13,9 +13,12 @@ public class ListOfPlayerCard : MonoBehaviour
     public Pioche pioche;
 	public PiocheEnnemi piocheEnnemi;
 
+    public bool CanDamage;
+    
     void Start()
     {
         CanGiveCardEnnemi = false;
+        CanDamage = false;
     }
 
    
@@ -24,10 +27,13 @@ public class ListOfPlayerCard : MonoBehaviour
         if (pioche.Spawn == true)
         {
             if (PlayerHand.Count < ListSize)
-                                   {
-                                       PlayerHand.Add(pioche.SpawnCard);
-                                       pioche.Spawn = false;
-                                   }
+            {
+                PlayerHand.Add(pioche.SpawnCard);
+                
+                pioche.Spawn = false;
+
+              
+            }
         }
 
        GameObject[] tag = GameObject.FindGameObjectsWithTag("card");
@@ -40,30 +46,68 @@ public class ListOfPlayerCard : MonoBehaviour
 						PlayerHand.Remove(pioche.SpawnCard);
                        playCarte.CanMove = false;
                         CanGiveCardEnnemi = true;
-                   }
+                          
+                        foreach (GameObject Obj in PlayerPlayCarte)
+                          {
+                              CanDamage = true;
+                          }
 
+                        foreach (GameObject objet in PlayerHand)
+                        {
+                            CanDamage = true;
+                        }
+                                          
+                   }
+                
                }
 
-            
+           // CanGiveCardEnnemi = true;
                 
     }
 
-    public void ListCard()
-    { 
+    public void CanMakeDamage()
+    {
         
+    }
+    
+    public void ListCard()
+    {
             foreach (GameObject obj in PlayerPlayCarte)
             {
-                if (obj != null && obj.tag == "card")
+                if (CanDamage == true)
                 {
-                    obj.GetComponent<AttackScript>().CanMakeDamage = true;
-                    if (CanGiveCardEnnemi == true)
+                    if (obj != null && obj.tag == "card")
                     {
-                        StartCoroutine(EnnemiCanPlay());
-                        CanGiveCardEnnemi = false;
+                     PlayCarte playCarte = obj.GetComponent<PlayCarte>();
+                    
+                           obj.GetComponent<AttackScript>().CanMakeDamage = true;
+                           StartCoroutine(EnnemiCanPlay());
+                           CanGiveCardEnnemi = false;
+                           CanDamage = false;
                     }
                 }
             }
+
+            foreach (GameObject obj in PlayerHand)
+            {
+                if (CanDamage == true)
+                {
+                    if (obj != null && obj.tag == "card")
+                    {
+                        PlayCarte playCarte = obj.GetComponent<PlayCarte>();
+                        obj.GetComponent<AttackScript>().CanMakeDamage = true;
+                        StartCoroutine(EnnemiCanPlay());
+                        CanGiveCardEnnemi = false;
+                        CanDamage = false;
+                    }
+                }
+            }
+                
+                //}
+           // }
+            
     }
+ 
 
 public IEnumerator EnnemiCanPlay()
 {
@@ -71,7 +115,6 @@ public IEnumerator EnnemiCanPlay()
 	
 	piocheEnnemi.CanGiveCard = true;
 }
-
 
 
 }

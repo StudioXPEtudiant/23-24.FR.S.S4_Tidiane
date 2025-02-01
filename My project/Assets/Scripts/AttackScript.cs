@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using TMPro;
 public class AttackScript : MonoBehaviour
 {
 	[SerializeField] private float CardDamage;
 	[SerializeField] private float CardHealth;
 	[SerializeField] private GameObject ButtonTourSuivant;
+
+	[SerializeField] private GameObject CardHealthGameObject;
+	[SerializeField] private GameObject CardAttackGameObject;
+
+	[SerializeField] private GameObject ThisCard;
 	//[SerializeField] private Vector2 origin;
 
 	public TourSuivant tourSuivant;
@@ -20,22 +25,33 @@ public class AttackScript : MonoBehaviour
 	public string tag;
 	
 	private bool CanClick;
-
+	
+	[SerializeField] private TMP_Text CardHealthText;
+	[SerializeField] private TMP_Text CardAttackText;
+	
     void Start()
     {
         ActualHealth = CardHealth;
 		ButtonTourSuivant = GameObject.FindWithTag("tourSuivantButton");
 		CanClick = true;
-		//CanMakeDamage = false;
+		CanMakeDamage = false;
     }
 
     
     void Update()
     {
- 
+	    if (ThisCard.tag == "card")
+	    {
+		    TMP_Text CardHealthText = CardHealthGameObject.GetComponent<TMP_Text>();
+		    TMP_Text CardAttackText = CardAttackGameObject.GetComponent<TMP_Text>();
+            		     
+		    CardHealthText.text = ActualHealth.ToString();
+		    CardAttackText.text = CardDamage.ToString();    
+	    }
+		     
+	    
 		if (CanMakeDamage == true)
-			{
-
+		{
         		if (playCarte.hit.collider != null)
         				{
         					if (playCarte.hit.transform.gameObject.tag == "EnnemiCard")
@@ -44,13 +60,13 @@ public class AttackScript : MonoBehaviour
 								if (attackScriptEnnemi != null)
 									{
         								attackScriptEnnemi.ActualHealth -= CardDamage;
-										//Debug.log("true");
-									
+										Debug.Log("true");
+										CanMakeDamage = false;
 									}
-									CanMakeDamage = false;
+									
         						}
         				}
-			}
+	    }
 			if (ActualHealth < 0)
             {
              Destroy(gameObject);
