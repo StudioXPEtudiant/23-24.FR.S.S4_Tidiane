@@ -17,6 +17,7 @@ public class Pioche : MonoBehaviour
 	public bool Spawn;
 
 	public bool ifAllTrue;
+	public bool CanMakeDamage;
 	
     void Start()
     {
@@ -32,6 +33,7 @@ public class Pioche : MonoBehaviour
 
 		CanGiveCard = true;
 		Spawn = false;
+		CanMakeDamage = false;
     }
 
     
@@ -65,7 +67,8 @@ public class Pioche : MonoBehaviour
 				    CardToSpawn[availableSpawn] = CardLvl1[randomCard];
 						CanSpawn[availableSpawn] = true;
 						Spawn = true;
-					
+						CanMakeDamage = true;
+						listOfPlayerCard.CanDamage = true;
 					}	
 			}
 		CanGiveCard = false;

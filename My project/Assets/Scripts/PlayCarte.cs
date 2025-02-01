@@ -12,11 +12,11 @@ public class PlayCarte : MonoBehaviour
 	public string Tag;
 	public AttackScript attackScript;
 	public GameObject CardToPlay;
-	public bool CanMakeDamage;
+	//public bool CanMakeDamage;
 	public GameObject colision;
 	public bool CanMoveCard;
 	public bool LibererSpawnPioche;
-	public bool CanMove;  
+	public bool CanMove;
 	
 	private Vector2 Saved;	
 	private bool PosCard;
@@ -26,7 +26,7 @@ public class PlayCarte : MonoBehaviour
       Saved = transform.position;
 	  PosCard = true;
 	  CanMoveCard = true;
-	CanMakeDamage = false;
+	//CanMakeDamage = false;
 	CanMove = false;
 	LibererSpawnPioche = false;
     }
@@ -107,7 +107,7 @@ public class PlayCarte : MonoBehaviour
 									//attackScript.CanMakeDamage = true;
 
 									//CanMakeDamage = true;
-
+									
 									colision = null;
 									PosCard = false;
 									CanMoveCard = false;
