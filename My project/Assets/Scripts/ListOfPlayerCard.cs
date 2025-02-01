@@ -52,10 +52,10 @@ public class ListOfPlayerCard : MonoBehaviour
                               CanDamage = true;
                           }
 
-                        foreach (GameObject objet in PlayerHand)
-                        {
-                            CanDamage = true;
-                        }
+                       // foreach (GameObject objet in PlayerHand)
+                        //{
+                           // CanDamage = true;
+                       // }
                                           
                    }
                 
@@ -72,6 +72,8 @@ public class ListOfPlayerCard : MonoBehaviour
     
     public void ListCard()
     {
+        
+        
             foreach (GameObject obj in PlayerPlayCarte)
             {
                 if (CanDamage == true)
@@ -89,18 +91,21 @@ public class ListOfPlayerCard : MonoBehaviour
             }
 
             foreach (GameObject obj in PlayerHand)
-            {
-                if (CanDamage == true)
-                {
+            { 
                     if (obj != null && obj.tag == "card")
                     {
                         PlayCarte playCarte = obj.GetComponent<PlayCarte>();
-                        obj.GetComponent<AttackScript>().CanMakeDamage = true;
-                        StartCoroutine(EnnemiCanPlay());
-                        CanGiveCardEnnemi = false;
-                        CanDamage = false;
-                    }
-                }
+                       
+                        if (pioche.CanMakeDamage == true)
+                        {
+                            CanDamage = true;
+                            obj.GetComponent<AttackScript>().CanMakeDamage = true;
+                            Debug.Log("3");
+                            StartCoroutine(EnnemiCanPlay());
+                            CanGiveCardEnnemi = false;
+                            pioche.CanMakeDamage = false;
+                        }
+                    }   
             }
                 
                 //}
@@ -111,9 +116,13 @@ public class ListOfPlayerCard : MonoBehaviour
 
 public IEnumerator EnnemiCanPlay()
 {
-	yield return new WaitForSeconds(2);
+    //if (CanDamage == true)
+    //{
+        yield return new WaitForSeconds(2);
+        	
+        piocheEnnemi.CanGiveCard = true;
+   // }
 	
-	piocheEnnemi.CanGiveCard = true;
 }
 
 
