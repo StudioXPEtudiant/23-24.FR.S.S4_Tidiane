@@ -8,25 +8,27 @@ public class PlayCarte : MonoBehaviour
 	[SerializeField] private bool[] IfCard;	
 	[SerializeField] private Vector2 origin;
 	
-	
-
 	public RaycastHit2D hit;
 	public string Tag;
 	public AttackScript attackScript;
 	public GameObject CardToPlay;
-	public bool CanMove;
-
-	private GameObject colision;
+	public bool CanMakeDamage;
+	public GameObject colision;
+	public bool CanMoveCard;
+	public bool LibererSpawnPioche;
+	public bool CanMove;  
+	
 	private Vector2 Saved;	
 	private bool PosCard;
-	private bool CanMoveCard;
-
+	
     void Start()
     {
       Saved = transform.position;
 	  PosCard = true;
 	  CanMoveCard = true;
+	CanMakeDamage = false;
 	CanMove = false;
+	LibererSpawnPioche = false;
     }
 
     
@@ -39,15 +41,6 @@ public class PlayCarte : MonoBehaviour
 			hit = Physics2D.Raycast(origin, Vector2.up, 3);
             Debug.DrawRay(origin, Vector2.up * 3, Color.red);
 
-
-
-		//if (hit.collider != null)
-			//{
-            	//if (hit.transform.gameObject.tag == Tag)
-            		//{
-            			
-               		//}
-			//}
 		}	
     }
 
@@ -77,12 +70,18 @@ public class PlayCarte : MonoBehaviour
 			if (collision.gameObject.tag == "card")
 				{
 					colision = null;
+					//LibererSpawnPioche = true;
 				}
 
 			if (collision.gameObject.tag == "EnnemiCard")
 				{
 					colision = null;
 				}
+
+			if (collision.gameObject.tag == "Plateau")
+			{
+				LibererSpawnPioche = true;
+			}
 
 		}
 
@@ -106,8 +105,8 @@ public class PlayCarte : MonoBehaviour
 									//PlayerPlayCarte.Add(CardToPlay);									
 
 									//attackScript.CanMakeDamage = true;
-	
 
+									//CanMakeDamage = true;
 
 									colision = null;
 									PosCard = false;

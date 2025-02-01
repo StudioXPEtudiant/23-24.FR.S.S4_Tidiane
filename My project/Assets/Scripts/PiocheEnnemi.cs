@@ -12,6 +12,8 @@ public class PiocheEnnemi : MonoBehaviour
 	public Vector2 Saved;        
 
     private int NumberOfCard = 0;
+    private int availableSpawn = -1;
+    
 	public PlayCarteEnnemi playCarteEnnemi;
 
 	public GameObject CardInstantiate;
@@ -37,7 +39,7 @@ public class PiocheEnnemi : MonoBehaviour
                    		{
        
                       			int randomSpawn = Random.Range(0, SpawnPointEnnemi.Length);
-                      			int availableSpawn = -1;
+                      			
        
                        		for (int i = 0; i < SpawnPointEnnemi.Length; i++)
                      				{
@@ -53,6 +55,7 @@ public class PiocheEnnemi : MonoBehaviour
                            int randomCard = Random.Range(0, CardLvl1.Length);
                           CardInstantiate = Instantiate(CardLvl1[randomCard], SpawnPointEnnemi[availableSpawn].transform.position,
                                Quaternion.identity);
+							playCarteEnnemi.EnnemiHand.Add(CardInstantiate);
 							CardInstantiate.tag = "EnnemiCard";
 							Saved = CardInstantiate.transform.position;
                            CanSpawn[availableSpawn] = true;
@@ -61,24 +64,22 @@ public class PiocheEnnemi : MonoBehaviour
                        }
 					CanGiveCard = false;
                    }
-       			
-		       
+
+       LibererSpawnPiocheEnnemi();
     }
-    
+		
+    public void LibererSpawnPiocheEnnemi()
+        {
+	        if (availableSpawn == 0)
+	        {
+		        for(int i = 0; i < CanSpawn.Length; i++)
+		        {
+			        CanSpawn[i] = false;
+		        }
+	        }
+         
+        }
 
-   // private IEnumerator SpawnCarteEnnemi()
-   // {
-        
-        //while (NumberOfCard < 2)
-       // {
-
-
-        public void TakeCardEnnemi()
-			{
-            	
-            //yield return new WaitForSeconds(1f);
-       }
-   // }
 
 
 }

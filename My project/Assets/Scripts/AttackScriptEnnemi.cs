@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
+
 public class AttackScriptEnnemi : MonoBehaviour
 {
     [SerializeField] private float CardDamage;
     [SerializeField] private float CardHealth;	
    
+    [SerializeField] private GameObject CardHealthGameObjectEnnemi;
+    [SerializeField] private GameObject CardAttackGameObjectEnnemi;
+    [SerializeField] private TMP_Text CardHealthTextEnnemi;
+    [SerializeField] private TMP_Text CardAttackTextEnnemi;
    
     [SerializeField] private Vector2 origin;
 
@@ -36,6 +42,16 @@ public class AttackScriptEnnemi : MonoBehaviour
     
     void Update()
     {
+	    if (CardEnnemiToPlay.tag == "EnnemiCard")
+	    {
+		     TMP_Text CardHealthTextEnnemi = CardHealthGameObjectEnnemi.GetComponent<TMP_Text>();
+		     TMP_Text CardAttackTextEnnemi = CardAttackGameObjectEnnemi.GetComponent<TMP_Text>();
+            		     
+		     CardHealthTextEnnemi.text = ActualHealth.ToString();
+		     CardAttackTextEnnemi.text = CardDamage.ToString();   
+	    }
+	   
+	    
         if (CanMakeDamage == true)
         {
             if (hit.collider != null)
@@ -53,6 +69,9 @@ public class AttackScriptEnnemi : MonoBehaviour
                     CanMakeDamage = false;
                 }
             }
+
+            StartCoroutine(WaitBeforeNull());
+
         }
 		if (CanDestroy == true)
 			{
@@ -93,9 +112,15 @@ public class AttackScriptEnnemi : MonoBehaviour
       	}
     }
 
-    private void CanRaycast()
+    private IEnumerator WaitBeforeNull()
     {
-      
+	    yield return new WaitForSeconds(1);
+	    
+	    if (hit.collider == null)
+	    {
+		    CanMakeDamage = false;
+		    Debug.Log("3");
+	    }
     }
    
     

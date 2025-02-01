@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 399763679}
   - component: {fileID: 399763678}
   - component: {fileID: 399763680}
+  - component: {fileID: 399763681}
   m_Layer: 0
   m_Name: plateaujoueur
   m_TagString: Plateau
@@ -856,6 +857,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3332417, y: 0.31581247}
   m_EdgeRadius: 0
+--- !u!50 &399763681
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399763677}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &400887511
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +889,7 @@ GameObject:
   - component: {fileID: 400887512}
   - component: {fileID: 400887513}
   - component: {fileID: 400887514}
+  - component: {fileID: 400887515}
   m_Layer: 0
   m_Name: Border All 1_11 (1)
   m_TagString: Plateau
@@ -967,6 +990,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3332417, y: 0.3158125}
   m_EdgeRadius: 0
+--- !u!50 &400887515
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400887511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &468715884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1771,7 @@ GameObject:
   - component: {fileID: 882709252}
   - component: {fileID: 882709253}
   - component: {fileID: 882709254}
+  - component: {fileID: 882709255}
   m_Layer: 0
   m_Name: Border All 1_11 (3)
   m_TagString: Plateau
@@ -1827,6 +1872,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3332417, y: 0.3158125}
   m_EdgeRadius: 0
+--- !u!50 &882709255
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882709251}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &925920834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,15 +2042,25 @@ MonoBehaviour:
   - {fileID: 1784310110}
   - {fileID: 1448741070}
   - {fileID: 955370984}
-  CanSpawn: 00000000
   ListSize: 4
   EnnemiHand: []
   CardPlay: []
+  AssigneGameObject:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ReferenceCase: []
+  CanSpawn: 00000000
   attackScriptEnnemi: {fileID: 0}
+  listOfEnnemiCard: {fileID: 1043961383}
   randomCard: 0
   cardToPlay: {fileID: 0}
   CanMove: 0
   CanMoveCard: 0
+  availableSpawn: -1
+  CanChangeSpawn: 0
+  aleatory: 0
   piocheEnnemi: {fileID: 561578131}
 --- !u!114 &1043961383
 MonoBehaviour:
@@ -2005,6 +2081,7 @@ MonoBehaviour:
   pioche: {fileID: 8202847156005279687}
   playCarteEnnemi: {fileID: 1043961382}
   listOfPlayerCard: {fileID: 0}
+  CanDamage: 0
 --- !u!1 &1065153217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,6 +2560,7 @@ GameObject:
   - component: {fileID: 1447020308}
   - component: {fileID: 1447020309}
   - component: {fileID: 1447020310}
+  - component: {fileID: 1447020311}
   m_Layer: 0
   m_Name: Border All 1_11 (2)
   m_TagString: Plateau
@@ -2583,6 +2661,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3332417, y: 0.3158125}
   m_EdgeRadius: 0
+--- !u!50 &1447020311
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447020307}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1448741070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,7 +3694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.3
+      value: 4.299988
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401561, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3795,6 +3894,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 349370475698506116, guid: 8b7ddd6e0e2c4e44f9813d314241f68c, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
+      propertyPath: CardToSpawn.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[10]
       value: 
       objectReference: {fileID: 5354269334163378435, guid: 34ccae0d9f7e9de4096efac9f015147e, type: 3}
@@ -3952,11 +4055,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 54.8
+      value: 54.799988
       objectReference: {fileID: 0}
     - target: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.3
+      value: 3.3000183
       objectReference: {fileID: 0}
     - target: {fileID: 8745003492084060312, guid: b0bd1e63bb08dfe48a3a074c10f402cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

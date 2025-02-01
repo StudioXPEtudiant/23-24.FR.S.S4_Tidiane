@@ -7,17 +7,23 @@ public class Pioche : MonoBehaviour
 	public GameObject[] SpawnPoint;
 	[SerializeField] private bool[] CanSpawn;
 	[SerializeField] private GameObject[] CardLvl1;
-
+	[SerializeField] private GameObject[] CardToSpawn;
+	[SerializeField] private int availableSpawn = -1;
+	[SerializeField] private List<GameObject> PlayerPiocheSpawn = new List<GameObject>();
+	//public PlayCarte playCarte;
 	public GameObject SpawnCard;	
     public bool CanGiveCard = true;
     public ListOfPlayerCard listOfPlayerCard;
 	public bool Spawn;
-	
 
+	public bool ifAllTrue;
+	
     void Start()
     {
-     	
+	    CardToSpawn = new GameObject[SpawnPoint.Length];
+	    
 		CanSpawn = new bool [SpawnPoint.Length];
+		ifAllTrue = true;
 
 		for (int i = 0; i < CanSpawn.Length; i++)
 			{
@@ -31,7 +37,7 @@ public class Pioche : MonoBehaviour
     
     void Update()
     {
-       
+	    libererSpawn();
     }
 
 	public void TakeCard()
@@ -40,7 +46,7 @@ public class Pioche : MonoBehaviour
 			{
 				
 				int randomSpawn = Random.Range(0, SpawnPoint.Length);
-				int availableSpawn = -1;
+				
 				
 				for (int i = 0; i < SpawnPoint.Length; i++)
 					{
@@ -55,38 +61,27 @@ public class Pioche : MonoBehaviour
 					{
 						int randomCard = Random.Range(0, CardLvl1.Length);
 				 	SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
-					
+				    PlayerPiocheSpawn.Add(CardLvl1[randomCard]);
+				    CardToSpawn[availableSpawn] = CardLvl1[randomCard];
 						CanSpawn[availableSpawn] = true;
 						Spawn = true;
 					
 					}	
 			}
 		CanGiveCard = false;
-		
+
 }
 
-	public void libererSpawn(GameObject card)
+	public void libererSpawn()
 	{
-		
-		
-		GameObject[] tag = GameObject.FindGameObjectsWithTag("card");
-		foreach (GameObject obj in tag)
+		if (availableSpawn == 0)
 		{
-			PlayCarte playCarte = obj.GetComponent<PlayCarte>();  
-			if(playCarte.CanMove == true)
+			for(int i = 0; i < CanSpawn.Length; i++)
 			{
-				for (int i = 0; i < SpawnPoint.Length; i++)
-				{
-					if (SpawnPoint[i].transform.position == card.transform.position)
-					{
-						CanSpawn[i] = false;
-
-					}
-				}
-				Debug.Log("true");
+				CanSpawn[i] = false;
 			}
+					      
 		}
-		
 	}
 
 	private void Spawn2()
