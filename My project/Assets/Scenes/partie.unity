@@ -358,6 +358,63 @@ Transform:
   m_Father: {fileID: 1143000319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &168467767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8202847156005279686}
+    m_Modifications:
+    - target: {fileID: 1232859030603536874, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_Name
+      value: rte pioche rouge (animation)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948782438681975552, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
 --- !u!1 &175245130
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +499,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1163010139}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8202847156005279687}
         m_TargetAssemblyTypeName: Pioche, Assembly-CSharp
         m_MethodName: TakeCard
@@ -2237,6 +2306,32 @@ Transform:
   m_Father: {fileID: 1560999652}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1163010136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1232859030603536874, guid: 986dfc63fce04874d8960940bc8b282f, type: 3}
+  m_PrefabInstance: {fileID: 168467767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1163010139
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163010136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb727b1e629ef8e4eac08eca171d41c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1182176020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,6 +2383,7 @@ MonoBehaviour:
   PlayerHand: []
   pioche: {fileID: 8202847156005279687}
   piocheEnnemi: {fileID: 561578131}
+  CanDamage: 0
 --- !u!1 &1284288782
 GameObject:
   m_ObjectHideFlags: 0
