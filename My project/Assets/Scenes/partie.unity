@@ -501,14 +501,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1163010139}
         m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 3
+        m_MethodName: SetTrigger
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: slot1
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8202847156005279687}
@@ -2332,6 +2332,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1163010142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163010136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ef575d1f36044429c346b1d2034bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182176020
 GameObject:
   m_ObjectHideFlags: 0
