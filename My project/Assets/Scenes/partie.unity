@@ -511,18 +511,6 @@ MonoBehaviour:
           m_StringArgument: slot1
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8202847156005279687}
-        m_TargetAssemblyTypeName: Pioche, Assembly-CSharp
-        m_MethodName: TakeCard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &175245133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2344,6 +2332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ef575d1f36044429c346b1d2034bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pioche: {fileID: 8202847156005279687}
 --- !u!1 &1182176020
 GameObject:
   m_ObjectHideFlags: 0
@@ -3929,6 +3918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
+      propertyPath: pioche
+      value: 
+      objectReference: {fileID: 175245132}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: listOfPlayerCard
       value: 

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class StopAnimation : MonoBehaviour
 {
-  public void stopanim1()
+	public Pioche pioche;
+	public void TakeCard()
     {
-        
+		pioche.TakeCard();
     }
 }
