@@ -216,6 +216,8 @@ Transform:
   - {fileID: 6836105133362560255}
   - {fileID: 715388128701327127}
   - {fileID: 1590717496617019448}
+  - {fileID: 6708871405339405671}
+  - {fileID: 9034598974993088525}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -237,6 +239,9 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: 8321347481425704282}
   CardToPlay: {fileID: 1475890528421391809}
+  colision: {fileID: 0}
+  CanMoveCard: 0
+  LibererSpawnPioche: 0
   CanMove: 0
 --- !u!61 &5917932742089482622
 BoxCollider2D:
@@ -299,11 +304,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 6
   CardHealth: 10
+  WeakDamage: 2
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 6206525634744535339}
   CardAttackGameObject: {fileID: 8071478254852618314}
   ThisCard: {fileID: 1475890528421391809}
-  tourSuivant: {fileID: 0}
+  ElementType: {fileID: 3804004409617992951}
+  Weak: {fileID: 3347403214176016922}
   makeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -322,6 +329,7 @@ MonoBehaviour:
   playCarte: {fileID: 3789199739856669689}
   ActualHealth: 0
   CanMakeDamage: 0
+  barreDeVieManager: {fileID: 0}
   tag: 
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
@@ -345,6 +353,8 @@ MonoBehaviour:
   CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
+  ElementType: {fileID: 3804004409617992951}
+  Weak: {fileID: 3347403214176016922}
   CardEnnemiToPlay: {fileID: 1475890528421391809}
   makeDamage:
     m_PersistentCalls:
@@ -538,6 +548,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3347403214176016922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6708871405339405671}
+  m_Layer: 0
+  m_Name: Weak
+  m_TagString: FoudreCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6708871405339405671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347403214176016922}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6498989, y: -0.35682535, z: -5.478523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3230342870996659179}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3779941666808810391
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +667,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3804004409617992951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9034598974993088525}
+  m_Layer: 0
+  m_Name: ElementType
+  m_TagString: FireCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9034598974993088525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804004409617992951}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6498989, y: -0.35682535, z: -5.478523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3230342870996659179}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5365440540727983747
 GameObject:
   m_ObjectHideFlags: 0

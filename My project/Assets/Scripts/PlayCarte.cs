@@ -12,7 +12,6 @@ public class PlayCarte : MonoBehaviour
 	public string Tag;
 	public AttackScript attackScript;
 	public GameObject CardToPlay;
-	//public bool CanMakeDamage;
 	public GameObject colision;
 	public bool CanMoveCard;
 	public bool LibererSpawnPioche;
@@ -23,12 +22,11 @@ public class PlayCarte : MonoBehaviour
 	
     void Start()
     {
-      Saved = transform.position;
-	  PosCard = true;
-	  CanMoveCard = true;
-	//CanMakeDamage = false;
-	CanMove = false;
-	LibererSpawnPioche = false;
+     	 Saved = transform.position;
+	  	PosCard = true;
+	 	CanMoveCard = true;
+		CanMove = false;
+		LibererSpawnPioche = false;
     }
 
     
@@ -70,7 +68,6 @@ public class PlayCarte : MonoBehaviour
 			if (collision.gameObject.tag == "card")
 				{
 					colision = null;
-					//LibererSpawnPioche = true;
 				}
 
 			if (collision.gameObject.tag == "EnnemiCard")
@@ -101,13 +98,7 @@ public class PlayCarte : MonoBehaviour
 									cardPos.y = colision.transform.position.y;
 					
 									CardToPlay.transform.position = cardPos;
-				
-									//PlayerPlayCarte.Add(CardToPlay);									
 
-									//attackScript.CanMakeDamage = true;
-
-									//CanMakeDamage = true;
-									
 									colision = null;
 									PosCard = false;
 									CanMoveCard = false;

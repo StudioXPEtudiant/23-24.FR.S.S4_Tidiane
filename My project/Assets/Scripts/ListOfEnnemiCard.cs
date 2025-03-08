@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ListOfEnnemiCard : MonoBehaviour
 {
     [SerializeField] private float ListSize = 5;
+	[SerializeField] private Button TourSuivant;
+
     public List<GameObject> EnnemiPlayCarte = new List<GameObject>();	
     public List<GameObject> EnnemiHand = new List<GameObject>();
     public PiocheEnnemi piocheEnnemi;
     public Pioche pioche;
 	public PlayCarteEnnemi playCarteEnnemi;
     public ListOfPlayerCard listOfPlayerCard;
-
 	public bool CanDamage;
+	
+	public BarreDeVieManager barreDeVieManager;
+
 
 	void Start()
     {
@@ -32,23 +37,15 @@ public class ListOfEnnemiCard : MonoBehaviour
         }
         
         GameObject[] tag = GameObject.FindGameObjectsWithTag("EnnemiCard");
-       
-        //foreach (GameObject obj in tag)
-        //{
-           // PlayCarteEnnemi playCarteEnnemi = obj.GetComponent<PlayCarteEnnemi>();  
-           //if (playCarteEnnemi != null)
-                  //{
-                       if (playCarteEnnemi.CanMove == true )
-                                  {
-                                      EnnemiPlayCarte.Add(playCarteEnnemi.cardToPlay);
-                                      EnnemiHand.Remove(piocheEnnemi.CardInstantiate);
-                                      playCarteEnnemi.CanMove = false;
-										ListCardEnnemi();
-                                  }
-                  //}  
-          
 
-       // }
+              if (playCarteEnnemi.CanMove == true )
+              	{
+                  	EnnemiPlayCarte.Add(playCarteEnnemi.cardToPlay);
+                  	EnnemiHand.Remove(piocheEnnemi.CardInstantiate);
+                  	playCarteEnnemi.CanMove = false;
+				  	ListCardEnnemi();
+                 }
+
        foreach (GameObject obj in EnnemiPlayCarte)
        {
         AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
@@ -56,10 +53,9 @@ public class ListOfEnnemiCard : MonoBehaviour
             	{
 					if(attackScriptEnnemi.ActualHealth == 0)
 					{
-						///Debug.Log("true");
 						EnnemiPlayCarte.Remove(attackScriptEnnemi.CardEnnemiToPlay);
 						playCarteEnnemi.CardPlay.Remove(attackScriptEnnemi.CardEnnemiToPlay);
-//playCarteEnnemi.CardPlay.Remove(playCarteEnnemi.cardToPlay)
+
 			
 						attackScriptEnnemi.CanDestroy = true;
                 	}
@@ -89,7 +85,6 @@ public class ListOfEnnemiCard : MonoBehaviour
 					{
 						EnnemiPlayCarte.Remove(attackScriptEnnemi.CardEnnemiToPlay);
 						playCarteEnnemi.CardPlay.Remove(attackScriptEnnemi.CardEnnemiToPlay);
-//piocheEnnemi.CardInstantiate
 	
 						attackScriptEnnemi.CanDestroy = true;
 		            }
@@ -97,25 +92,28 @@ public class ListOfEnnemiCard : MonoBehaviour
 
 	            }
 		}
-    }//playCarteEnnemi.CardPlay.Remove(playCarteEnnemi.cardToPlay)
+    }
 
     private void ListCardEnnemi()
     {
-		//if(CanDamage == true)
-		//{
         	foreach (GameObject obj in EnnemiPlayCarte)
         	{
 				AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
             		if (obj != null && obj.tag == "EnnemiCard")
             		{
-						Debug.Log("ok");
+						if(attackScriptEnnemi.hit.collider == null)
+							{
+									barreDeVieManager.CanActualiseHealthBarPlayer = true;
+								barreDeVieManager.ActualiseHealthBarPlayer();
+								attackScriptEnnemi.CanMakeDamage = false;
+							}
+
                 		attackScriptEnnemi.CanMakeDamage = true;
 				
 						StartCoroutine(PlayerCanPlay());
-						//CanDamage = false;
+						TourSuivant.interactable = true;
          	  		}
         	}
-		//}
     }
     
     public IEnumerator PlayerCanPlay()
@@ -123,7 +121,7 @@ public class ListOfEnnemiCard : MonoBehaviour
         yield return new WaitForSeconds(4);
 	
         pioche.CanGiveCard = true;
-       // pioche.CanGiveCard = false;
+
     }
     
     

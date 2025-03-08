@@ -31,16 +31,13 @@ public class PlayCarteEnnemi : MonoBehaviour
     public bool CanChangeSpawn;
     public int aleatory;
     public PiocheEnnemi piocheEnnemi;
-
+    
     void Start()
     {
          AssigneGameObject = new GameObject[4];
          ReferenceCase = new GameObject[2];
-         //AGameObject = new GameObject[1];
-        //GameObject[]SpawnPointEnnemi.Length
-        CanSpawn = new bool [4];
-       // SpawnPointEnnemi = new GameObject[4];
-       // 
+         CanSpawn = new bool [4];
+        
         for (int i = 0; i < CanSpawn.Length; i++)
         {
             CanSpawn[i] = false;
@@ -67,9 +64,7 @@ public class PlayCarteEnnemi : MonoBehaviour
 
     public IEnumerator EnnemiTurn()
     {
-        //Saved = transform.position;
         yield return new WaitForSeconds(2);
-        // CanMove = true;
         EnnemiHand.Add(piocheEnnemi.CardInstantiate);
         CanGiveCard = true;
 
@@ -105,8 +100,7 @@ public class PlayCarteEnnemi : MonoBehaviour
                     if (CardPlay.Count < ListSize)
                     {
                         piocheEnnemi.CardInstantiate.transform.position = 
-                                 SpawnPointEnnemi[availableSpawn].transform.position;
-                        //availableSpawn
+                        SpawnPointEnnemi[availableSpawn].transform.position;
                         
                         if (availableSpawn == 0)
                         {
@@ -118,38 +112,20 @@ public class PlayCarteEnnemi : MonoBehaviour
                         AssigneGameObject[availableSpawn] = cardToPlay;
                         
                        CanSpawn[availableSpawn] = true;
-                       //listOfEnnemiCard.CanDamage = true;
                     }
 
                 }
-                //cardToPlay
-
             }
-
-
-
-
-
-
+            
             if (CardPlay.Count > ListSize)
             {
                 CanMoveCard = false;
                 EnnemiHand.Add(cardToPlay);
                 CardPlay.RemoveAt(randomCard);
                 cardToPlay.transform.position = piocheEnnemi.Saved;
-
             }
-
-
-
-
             CanGiveCard = false;
             CanMoveCard = false;
-
         }
-
-
-
     }
-
 }

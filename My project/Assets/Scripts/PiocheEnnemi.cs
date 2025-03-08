@@ -19,9 +19,7 @@ public class PiocheEnnemi : MonoBehaviour
 	public GameObject CardInstantiate;
 
     void Start()
-    {
-       // StartCoroutine(SpawnCarteEnnemi());
-		        
+    {	        
         CanSpawn = new bool [SpawnPointEnnemi.Length];
 
             for (int i = 0; i < CanSpawn.Length; i++)

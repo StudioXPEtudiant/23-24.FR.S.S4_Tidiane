@@ -172,6 +172,68 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3715035541990187190}
   m_maskType: 0
+--- !u!1 &2349361493369348994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5552921418859895662}
+  m_Layer: 0
+  m_Name: Weak
+  m_TagString: FireCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5552921418859895662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349361493369348994}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2085185, y: -0.22098768, z: -5.376425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8527766040467774376}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2620948126621578605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9124977648214547959}
+  m_Layer: 0
+  m_Name: ElementType
+  m_TagString: PlantCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9124977648214547959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620948126621578605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2085185, y: -0.22098768, z: -5.376425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8527766040467774376}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2796403519355778261
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +782,8 @@ Transform:
   - {fileID: 8291083263827901432}
   - {fileID: 1957693917127690720}
   - {fileID: 286146719263339243}
+  - {fileID: 5552921418859895662}
+  - {fileID: 9124977648214547959}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -741,6 +805,9 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: -268313990253203044}
   CardToPlay: {fileID: 5690200463508217218}
+  colision: {fileID: 0}
+  CanMoveCard: 0
+  LibererSpawnPioche: 0
   CanMove: 0
 --- !u!61 &6826923509998664392
 BoxCollider2D:
@@ -803,17 +870,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 6
   CardHealth: 10
+  WeakDamage: 2
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 1584540762342330411}
   CardAttackGameObject: {fileID: 2796403519355778261}
   ThisCard: {fileID: 5690200463508217218}
-  tourSuivant: {fileID: 0}
+  ElementType: {fileID: 2620948126621578605}
+  Weak: {fileID: 2349361493369348994}
   makeDamage:
     m_PersistentCalls:
       m_Calls: []
   playCarte: {fileID: 6011158164531577915}
   ActualHealth: 0
   CanMakeDamage: 0
+  barreDeVieManager: {fileID: 0}
   tag: 
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
@@ -837,6 +907,8 @@ MonoBehaviour:
   CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
+  ElementType: {fileID: 2620948126621578605}
+  Weak: {fileID: 2349361493369348994}
   CardEnnemiToPlay: {fileID: 5690200463508217218}
   makeDamage:
     m_PersistentCalls:

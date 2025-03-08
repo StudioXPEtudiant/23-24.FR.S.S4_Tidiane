@@ -8,6 +8,11 @@ TagManager:
   - Plateau
   - EnnemiCard
   - tourSuivantButton
+  - WaterCard
+  - WeakPlant
+  - PlantCard
+  - FoudreCard
+  - FireCard
   layers:
   - Default
   - TransparentFX

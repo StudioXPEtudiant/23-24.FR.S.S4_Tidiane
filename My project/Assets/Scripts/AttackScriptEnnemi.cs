@@ -19,6 +19,9 @@ public class AttackScriptEnnemi : MonoBehaviour
 
     [SerializeField] private Text ShowCardHealth;
 
+    [SerializeField] private GameObject ElementType;
+    public GameObject Weak;
+
     public GameObject CardEnnemiToPlay;
     public UnityEvent makeDamage;
     public bool CanMakeDamage = false;
@@ -34,7 +37,6 @@ public class AttackScriptEnnemi : MonoBehaviour
     void Start()
     {
         ActualHealth = CardHealth;
-       // CanShowRaycast = false;
         CanShowRaycast = true;
 		CanMakeDamage = false;
     }
@@ -62,66 +64,33 @@ public class AttackScriptEnnemi : MonoBehaviour
                     if (attackScript != null)
                     {
                        attackScript.ActualHealth -= CardDamage;
-
-                       
-                        
                     }
                     CanMakeDamage = false;
+                    if(hit.collider.tag == "Plateau")
+                    {
+                        CanMakeDamage = false;
+                    }
                 }
             }
-
-            StartCoroutine(WaitBeforeNull());
-
+  				 if (hit.collider == null)
+                    {
+                        CanMakeDamage = false;
+                    } 
         }
+
+    
+
 		if (CanDestroy == true)
 			{
-  				//if (ActualHealth < 0)
-             	//{
              		Destroy(gameObject);
-             //	}
-            
-             	//if (ActualHealth == 0)
-             //	{
-               	//Destroy(gameObject);
-             	//}
 			}          
    
         if (gameObject.tag == "EnnemiCard")
         {
-            
             origin = (Vector2)transform.position - new Vector2 (0,1);
                         
-                        hit = Physics2D.Raycast(origin, Vector2.down, 3);
-                        Debug.DrawRay(origin, Vector2.down * 3, Color.red);
-            
-        //if (CanShowRaycast == true)
-        //{
-            
-            
-            if (hit.collider != null)
-            {
-                if (hit.transform.gameObject.tag == "card")
-                    {
-                       // CanMakeDamage = true;
-						//Debug.Log("true");
-						
-                        //CanShowRaycast = false;
-                    }
-                 //}
-            } 
+            hit = Physics2D.Raycast(origin, Vector2.down, 3);
+            Debug.DrawRay(origin, Vector2.down * 3, Color.red);
       	}
-    }
-
-    private IEnumerator WaitBeforeNull()
-    {
-	    yield return new WaitForSeconds(1);
-	    
-	    if (hit.collider == null)
-	    {
-		    CanMakeDamage = false;
-		    Debug.Log("3");
-	    }
-    }
-   
-    
+    }    
 }

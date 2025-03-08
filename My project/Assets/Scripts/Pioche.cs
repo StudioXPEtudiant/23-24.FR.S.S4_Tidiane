@@ -10,7 +10,6 @@ public class Pioche : MonoBehaviour
 	[SerializeField] private GameObject[] CardToSpawn;
 	[SerializeField] private int availableSpawn = -1;
 	[SerializeField] private List<GameObject> PlayerPiocheSpawn = new List<GameObject>();
-	//public PlayCarte playCarte;
 	public GameObject SpawnCard;	
     public bool CanGiveCard = true;
     public ListOfPlayerCard listOfPlayerCard;

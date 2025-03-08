@@ -485,6 +485,8 @@ Transform:
   - {fileID: 4158449111838338570}
   - {fileID: 3909885131276054776}
   - {fileID: 8126057499922219170}
+  - {fileID: 2411028922197743088}
+  - {fileID: 1547820743254088793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -532,6 +534,9 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: 8463454123093619482}
   CardToPlay: {fileID: 5339731875521947880}
+  colision: {fileID: 0}
+  CanMoveCard: 0
+  LibererSpawnPioche: 0
   CanMove: 0
 --- !u!50 &-402844981139773918
 Rigidbody2D:
@@ -568,11 +573,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 4
   CardHealth: 10
+  WeakDamage: 2
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 5799768752033494021}
   CardAttackGameObject: {fileID: 7725005673863166206}
   ThisCard: {fileID: 5339731875521947880}
-  tourSuivant: {fileID: 0}
+  ElementType: {fileID: 7845427040885989643}
+  Weak: {fileID: 8348906183506395977}
   makeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -591,6 +598,7 @@ MonoBehaviour:
   playCarte: {fileID: 2264109386742796627}
   ActualHealth: 0
   CanMakeDamage: 0
+  barreDeVieManager: {fileID: 0}
   tag: 
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
@@ -614,6 +622,8 @@ MonoBehaviour:
   CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
+  ElementType: {fileID: 7845427040885989643}
+  Weak: {fileID: 8348906183506395977}
   CardEnnemiToPlay: {fileID: 5339731875521947880}
   makeDamage:
     m_PersistentCalls:
@@ -1239,6 +1249,68 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 76047892093067184}
   m_maskType: 0
+--- !u!1 &7845427040885989643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547820743254088793}
+  m_Layer: 0
+  m_Name: ElementType
+  m_TagString: FireCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1547820743254088793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7845427040885989643}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.37424183, y: -0.11918199, z: -4.990568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8265680907088948930}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8348906183506395977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2411028922197743088}
+  m_Layer: 0
+  m_Name: Weak
+  m_TagString: FoudreCard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2411028922197743088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8348906183506395977}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.37424183, y: -0.11918199, z: -4.990568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8265680907088948930}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8788121797466158383
 GameObject:
   m_ObjectHideFlags: 0
