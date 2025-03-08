@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Pioche : MonoBehaviour
 {
 	public GameObject[] SpawnPoint;
@@ -14,7 +14,7 @@ public class Pioche : MonoBehaviour
     public bool CanGiveCard = true;
     public ListOfPlayerCard listOfPlayerCard;
 	public bool Spawn;
-
+	public Button pioche;
 	public bool ifAllTrue;
 	public bool CanMakeDamage;
 	
@@ -71,7 +71,7 @@ public class Pioche : MonoBehaviour
 					}	
 			}
 		CanGiveCard = false;
-
+		pioche.interactable = false;
 }
 
 	public void libererSpawn()
