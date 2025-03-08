@@ -3959,6 +3959,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
+      propertyPath: pioche
+      value: 
+      objectReference: {fileID: 175245132}
+    - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: listOfPlayerCard
       value: 
       objectReference: {fileID: 1182176022}

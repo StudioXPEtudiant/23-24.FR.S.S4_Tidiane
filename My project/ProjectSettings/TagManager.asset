@@ -13,6 +13,8 @@ TagManager:
   - PlantCard
   - FoudreCard
   - FireCard
+  - NegativeEffect
+  - PositiveEffect
   layers:
   - Default
   - TransparentFX

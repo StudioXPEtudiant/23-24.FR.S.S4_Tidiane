@@ -789,6 +789,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6486009791244805681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5228877822266441174}
+  m_Layer: 0
+  m_Name: Weak
+  m_TagString: NegativeEffect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5228877822266441174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6486009791244805681}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06606817, y: -0.10052216, z: -5.0322638}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5119020773537116999}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6880999386074739712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4379345261116070319}
+  m_Layer: 0
+  m_Name: ElementType
+  m_TagString: PositiveEffect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4379345261116070319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6880999386074739712}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06606817, y: -0.10052216, z: -5.0322638}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5119020773537116999}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6893635640133980987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1147,8 @@ Transform:
   - {fileID: 1943856985493472073}
   - {fileID: 5615760064167937442}
   - {fileID: 5717258716662680137}
+  - {fileID: 5228877822266441174}
+  - {fileID: 4379345261116070319}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1126,9 +1190,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadbef51be7678d4784607201247f1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pioche: {fileID: 0}
-  piocheEnnemi: {fileID: 0}
-  attackScript: {fileID: 0}
+  HealthBarLifePlayer: 0
+  HealthBarLifeEnnemi: 0
+  PlayerHealthBar: {fileID: 0}
+  EnnemiHealthBar: {fileID: 0}
+  HealthBarDamageEnnemi: 0
+  HealthBarDamagePlayer: 0
+  CanActualiseHealthBarEnnemi: 0
+  CanActualiseHealthBarPlayer: 0
 --- !u!114 &7447564332638664043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,6 +1216,9 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: 2160050569447717211}
   CardToPlay: {fileID: 9197893473822668141}
+  colision: {fileID: 0}
+  CanMoveCard: 0
+  LibererSpawnPioche: 0
   CanMove: 0
 --- !u!50 &5704922902336977432
 Rigidbody2D:
@@ -1183,17 +1255,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 4
   CardHealth: 10
+  WeakDamage: 0
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 1875367422636881479}
   CardAttackGameObject: {fileID: 2724493901060755186}
   ThisCard: {fileID: 9197893473822668141}
-  tourSuivant: {fileID: 0}
+  ElementType: {fileID: 6880999386074739712}
+  Weak: {fileID: 6486009791244805681}
   makeDamage:
     m_PersistentCalls:
       m_Calls: []
   playCarte: {fileID: 7447564332638664043}
   ActualHealth: 0
   CanMakeDamage: 0
+  barreDeVieManager: {fileID: 0}
   tag: 
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
@@ -1217,6 +1292,8 @@ MonoBehaviour:
   CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
+  ElementType: {fileID: 6880999386074739712}
+  Weak: {fileID: 6486009791244805681}
   CardEnnemiToPlay: {fileID: 9197893473822668141}
   makeDamage:
     m_PersistentCalls:

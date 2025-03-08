@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &20282218762459522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6450180915992870471}
+  m_Layer: 0
+  m_Name: Weak
+  m_TagString: PositiveEffect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6450180915992870471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20282218762459522}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.16367626, y: -0.34649312, z: -5.035685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8277966528855430953}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174253479066835243
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +379,37 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!1 &2110380663100395912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5501062425198245459}
+  m_Layer: 0
+  m_Name: ElementType
+  m_TagString: NegativeEffect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5501062425198245459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110380663100395912}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.16367626, y: -0.34649312, z: -5.035685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8277966528855430953}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2769271025359875951
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +790,8 @@ Transform:
   - {fileID: 4644688906411434589}
   - {fileID: 8360892236045734306}
   - {fileID: 9173520438749124919}
+  - {fileID: 6450180915992870471}
+  - {fileID: 5501062425198245459}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -775,6 +839,9 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: -6634169712047957977}
   CardToPlay: {fileID: 5354269334163378435}
+  colision: {fileID: 0}
+  CanMoveCard: 0
+  LibererSpawnPioche: 0
   CanMove: 0
 --- !u!50 &-5575091472316370493
 Rigidbody2D:
@@ -811,17 +878,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 4
   CardHealth: 12
+  WeakDamage: 0
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 867190470668655341}
   CardAttackGameObject: {fileID: 4882934290520152400}
   ThisCard: {fileID: 5354269334163378435}
-  tourSuivant: {fileID: 0}
+  ElementType: {fileID: 2110380663100395912}
+  Weak: {fileID: 20282218762459522}
   makeDamage:
     m_PersistentCalls:
       m_Calls: []
   playCarte: {fileID: 2971309599350723192}
   ActualHealth: 0
   CanMakeDamage: 0
+  barreDeVieManager: {fileID: 0}
   tag: 
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
@@ -845,6 +915,8 @@ MonoBehaviour:
   CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
+  ElementType: {fileID: 2110380663100395912}
+  Weak: {fileID: 20282218762459522}
   CardEnnemiToPlay: {fileID: 5354269334163378435}
   makeDamage:
     m_PersistentCalls:

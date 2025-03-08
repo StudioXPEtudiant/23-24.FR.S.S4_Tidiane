@@ -124,6 +124,8 @@ Transform:
   - {fileID: 1881669300008153152}
   - {fileID: 2882931213975515500}
   - {fileID: 940659629726522308}
+  - {fileID: 6964968580872992263}
+  - {fileID: 2187155517967200401}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,6 +147,9 @@ MonoBehaviour:
   Tag: EnnemiCard
   attackScript: {fileID: 4061546426279587394}
   CardToPlay: {fileID: 349370475698506116}
+  colision: {fileID: 0}
+  CanMoveCard: 0
+  LibererSpawnPioche: 0
   CanMove: 0
 --- !u!61 &8806676413454289124
 BoxCollider2D:
@@ -207,17 +212,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 6
   CardHealth: 10
+  WeakDamage: 0
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 4705432613122305107}
   CardAttackGameObject: {fileID: 864410377760606821}
   ThisCard: {fileID: 349370475698506116}
-  tourSuivant: {fileID: 0}
+  ElementType: {fileID: 3435702672077460480}
+  Weak: {fileID: 4850661442968429298}
   makeDamage:
     m_PersistentCalls:
       m_Calls: []
   playCarte: {fileID: 2819961529232323931}
   ActualHealth: 0
   CanMakeDamage: 0
+  barreDeVieManager: {fileID: 0}
   tag: 
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
@@ -241,6 +249,8 @@ MonoBehaviour:
   CardAttackTextEnnemi: {fileID: 0}
   origin: {x: 0, y: -1}
   ShowCardHealth: {fileID: 0}
+  ElementType: {fileID: 3435702672077460480}
+  Weak: {fileID: 4850661442968429298}
   CardEnnemiToPlay: {fileID: 349370475698506116}
   makeDamage:
     m_PersistentCalls:
@@ -522,6 +532,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3474459901562658974}
   m_maskType: 0
+--- !u!1 &3435702672077460480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2187155517967200401}
+  m_Layer: 0
+  m_Name: ElementType
+  m_TagString: NegativeEffect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2187155517967200401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435702672077460480}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.55954456, y: 0.16986528, z: 0.02383536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4356713381870686126}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4391617504332313434
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +819,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 104004187612924104}
   m_maskType: 0
+--- !u!1 &4850661442968429298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6964968580872992263}
+  m_Layer: 0
+  m_Name: Weak
+  m_TagString: PositiveEffect
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6964968580872992263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850661442968429298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.55954456, y: 0.16986528, z: 0.02383536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4356713381870686126}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5424593811474404589
 GameObject:
   m_ObjectHideFlags: 0
