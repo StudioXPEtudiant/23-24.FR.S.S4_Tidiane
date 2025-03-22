@@ -73,7 +73,7 @@ public class Pioche : MonoBehaviour
 							Spawn = true;
 							CanMakeDamage = true;
 							listOfPlayerCard.CanDamage = true;
-						
+							
 						}
 					}	
 			}
