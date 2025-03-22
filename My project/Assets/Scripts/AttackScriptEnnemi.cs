@@ -9,7 +9,8 @@ public class AttackScriptEnnemi : MonoBehaviour
 {
     [SerializeField] private float CardDamage;
     [SerializeField] private float CardHealth;	
-   
+    [SerializeField] private float WeakDamage;
+
     [SerializeField] private GameObject CardHealthGameObjectEnnemi;
     [SerializeField] private GameObject CardAttackGameObjectEnnemi;
     [SerializeField] private TMP_Text CardHealthTextEnnemi;
@@ -63,15 +64,87 @@ public class AttackScriptEnnemi : MonoBehaviour
                     AttackScript attackScript = hit.collider.GetComponent<AttackScript>();
                     if (attackScript != null)
                     {
-                       attackScript.ActualHealth -= CardDamage;
+                        if(ElementType.tag != attackScript.Weak.tag)
+                        {
+                             attackScript.ActualHealth -= CardDamage;
+                        } 
                     }
                     CanMakeDamage = false;
-                    if(hit.collider.tag == "Plateau")
+                    
+                    if(ElementType.tag == "PlantCard" && attackScript.Weak.tag == "PlantCard")
                     {
-                        CanMakeDamage = false;
+                        if (CardEnnemiToPlay.tag == "EnnemiCard")
+                        {
+                             attackScript.ActualHealth -= CardDamage;
+                             attackScript.ActualHealth -= WeakDamage;
+                        }
+                       
+                    }
+
+                    if(ElementType.tag == "WaterCard" && attackScript.Weak.tag == "WaterCard")
+                    {
+                        if (CardEnnemiToPlay.tag == "EnnemiCard")
+                        {
+                            attackScript.ActualHealth -= CardDamage;
+                            attackScript.ActualHealth -= WeakDamage;
+                        }
+                    }
+
+                    if(ElementType.tag == "FoudreCard" && attackScript.Weak.tag == "FoudreCard")
+                    {
+                        if (CardEnnemiToPlay.tag == "EnnemiCard")
+                        {
+                            attackScript.ActualHealth -= CardDamage;
+                            attackScript.ActualHealth -= WeakDamage;
+                        }
+                    }
+
+                    if(ElementType.tag == "FireCard" && attackScript.Weak.tag == "FireCard")
+                    {
+                        if (CardEnnemiToPlay.tag == "EnnemiCard")
+                        {
+                            attackScript.ActualHealth -= CardDamage;
+                            attackScript.ActualHealth -= WeakDamage;
+                        }
+                    }
+
+                   
+
+                    if (ElementType.tag == "NegativeEffect" && attackScript.Weak.tag == "NegativeEffect")
+                    {
+                        if (attackScript != null)
+                        {
+                            if (CardEnnemiToPlay.tag == "EnnemiCard")
+                            {
+                                attackScript.ActualHealth -= CardDamage;
+                                attackScript.ActualHealth -= WeakDamage;
+                            }
+                            CanMakeDamage = false;
+
+                        }
+                    }
+
+                    if (ElementType.tag == "PositiveEffect" && attackScript.Weak.tag == "PositiveEffect")
+                    {
+                        if(attackScript != null)
+                        {
+                            if (CardEnnemiToPlay.tag == "EnnemiCard")
+                            {
+                                attackScript.ActualHealth -= CardDamage;
+                                attackScript.ActualHealth -= WeakDamage;
+                            }
+                            CanMakeDamage = false;
+                    
+                        }
+                                            
                     }
                 }
             }
+
+            //if(hit.collider.tag == "Plateau")
+            //{
+               // CanMakeDamage = false;
+           // }
   				 if (hit.collider == null)
                     {
                         CanMakeDamage = false;

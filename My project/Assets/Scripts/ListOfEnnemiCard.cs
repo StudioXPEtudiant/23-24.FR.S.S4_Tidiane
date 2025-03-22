@@ -100,7 +100,8 @@ public class ListOfEnnemiCard : MonoBehaviour
         	{
 				AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
             		if (obj != null && obj.tag == "EnnemiCard")
-            		{						
+            		{				
+							attackScriptEnnemi.CanMakeDamage = true;	
 						if(attackScriptEnnemi.hit.collider == null)
 							{
 									barreDeVieManager.CanActualiseHealthBarPlayer = true;
@@ -108,10 +109,9 @@ public class ListOfEnnemiCard : MonoBehaviour
 								attackScriptEnnemi.CanMakeDamage = false;
 							}
 
-                		attackScriptEnnemi.CanMakeDamage = true;
+                		
 				
 						StartCoroutine(PlayerCanPlay());
-						//attackScriptEnnemi.CanMakeDamage = false;
 						TourSuivant.interactable = true;
          	  		}
         	}

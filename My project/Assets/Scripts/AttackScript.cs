@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using TMPro;
 public class AttackScript : MonoBehaviour
 {
-	[SerializeField] private float CardDamage;
+	
 	[SerializeField] private float CardHealth;
 	[SerializeField] private float WeakDamage;
 	[SerializeField] private GameObject ButtonTourSuivant;
@@ -14,9 +14,11 @@ public class AttackScript : MonoBehaviour
 	[SerializeField] private GameObject CardAttackGameObject;
 
 	[SerializeField] private GameObject ThisCard;
-	[SerializeField] private GameObject ElementType;
-	[SerializeField] private GameObject Weak;
 
+	public float CardDamage;
+	public float negativeEffect = 1;
+	public GameObject ElementType;
+	public GameObject Weak;
 	public UnityEvent <GameObject> makeDamage;
 	public PlayCarte playCarte;
 	public float ActualHealth;
@@ -66,9 +68,9 @@ public class AttackScript : MonoBehaviour
 																	
 										if (attackScriptEnnemi != null)
 										{			
-											if(ElementType.tag != playCarte.hit.collider.tag)
+											if(ElementType.tag != attackScriptEnnemi.Weak.tag)
 												{
-													//attackScriptEnnemi.ActualHealth -= CardDamage;
+													attackScriptEnnemi.ActualHealth -= CardDamage;
 													CanMakeDamage = false;
 												}						
 										}
@@ -80,38 +82,83 @@ public class AttackScript : MonoBehaviour
 												//Debug.Log(playCarte.hit.collider.CompareTag("PlantCard"));
 												if(attackScriptEnnemi != null)
 													{
-														attackScriptEnnemi.ActualHealth -= CardDamage;
-														attackScriptEnnemi.ActualHealth -= WeakDamage;
+														if (ThisCard.tag == "card")
+														{
+															attackScriptEnnemi.ActualHealth -= CardDamage;
+															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															CanMakeDamage = false;
+														}
+														
 													}
 											}
 										if (ElementType.tag == "WaterCard" && attackScriptEnnemi.Weak.tag == "WaterCard")
 											{
 												if(attackScriptEnnemi != null)
 													{
-														
-														attackScriptEnnemi.ActualHealth -= CardDamage;
-														attackScriptEnnemi.ActualHealth -= WeakDamage;
+														if (ThisCard.tag == "card")
+														{
+															attackScriptEnnemi.ActualHealth -= CardDamage;
+															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															CanMakeDamage = false;
+														}
 													}
 											}
 										if (ElementType.tag == "FoudreCard" && attackScriptEnnemi.Weak.tag == "FoudreCard")//
 											{
 												if(attackScriptEnnemi != null)
 													{
-													
-														attackScriptEnnemi.ActualHealth -= CardDamage;
-														attackScriptEnnemi.ActualHealth -= WeakDamage;
+														if (ThisCard.tag == "card")
+														{
+															attackScriptEnnemi.ActualHealth -= CardDamage;
+															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															CanMakeDamage = false;
+														}
 													}
 											}
 										if (ElementType.tag == "FireCard" && attackScriptEnnemi.Weak.tag == "FireCard")
 											{
 												if(attackScriptEnnemi != null)
 													{
-														attackScriptEnnemi.ActualHealth -= CardDamage;
-														attackScriptEnnemi.ActualHealth -= WeakDamage;
+														if (ThisCard.tag == "card")
+														{
+															attackScriptEnnemi.ActualHealth -= CardDamage;
+															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															CanMakeDamage = false;
+														}
 													}//CardDamage *= WeakDamage;
                                                     //attackScriptEnnemi.ActualHealth -= CardDamage;
 													// playCarte.hit.collider.tag == "FireCard"
 											}
+
+									
+										
+										
+										if (ElementType.tag == "NegativeEffect" && attackScriptEnnemi.Weak.tag == "NegativeEffect")
+										{
+											if(attackScriptEnnemi != null)
+											{
+												if (ThisCard.tag == "card")
+												{
+													attackScriptEnnemi.ActualHealth -= CardDamage;
+													attackScriptEnnemi.ActualHealth -= WeakDamage;
+													CanMakeDamage = false;
+												}
+											}
+										}
+										
+										if (ElementType.tag == "PositiveEffect" && attackScriptEnnemi.Weak.tag == "PositiveEffect")
+										{
+											if(attackScriptEnnemi != null)
+											{
+												if (ThisCard.tag == "card")
+												{
+													attackScriptEnnemi.ActualHealth -= CardDamage;
+													attackScriptEnnemi.ActualHealth -= WeakDamage;
+													CanMakeDamage = false;
+												}
+											}
+										}
+										
 								    	}
         				}
 

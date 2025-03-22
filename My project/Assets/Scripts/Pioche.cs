@@ -6,10 +6,12 @@ public class Pioche : MonoBehaviour
 {
 	public GameObject[] SpawnPoint;
 	[SerializeField] private bool[] CanSpawn;
-	[SerializeField] private GameObject[] CardLvl1;
+	public GameObject[] CardLvl1;
 	[SerializeField] private GameObject[] CardToSpawn;
 	[SerializeField] private int availableSpawn = -1;
 	[SerializeField] private List<GameObject> PlayerPiocheSpawn = new List<GameObject>();
+	[SerializeField] private bool CanSpawnMaxCard;
+	
 	public GameObject SpawnCard;	
     public bool CanGiveCard = true;
     public ListOfPlayerCard listOfPlayerCard;
@@ -21,6 +23,7 @@ public class Pioche : MonoBehaviour
     void Start()
     {
 	    CardToSpawn = new GameObject[SpawnPoint.Length];
+	    CanSpawnMaxCard = true;
 	    
 		CanSpawn = new bool [SpawnPoint.Length];
 		ifAllTrue = true;
@@ -59,15 +62,19 @@ public class Pioche : MonoBehaviour
 					}
 
 				if (availableSpawn != -1)
-					{
-						int randomCard = Random.Range(0, CardLvl1.Length);
-				 	SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
-				    PlayerPiocheSpawn.Add(CardLvl1[randomCard]);
-				    CardToSpawn[availableSpawn] = CardLvl1[randomCard];
-						CanSpawn[availableSpawn] = true;
-						Spawn = true;
-						CanMakeDamage = true;
-						listOfPlayerCard.CanDamage = true;
+				{
+						if (CanSpawnMaxCard)
+						{	
+							int randomCard = Random.Range(0, CardLvl1.Length);
+				 			SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
+							PlayerPiocheSpawn.Add(CardLvl1[randomCard]);//randomCardrandomCard
+							CardToSpawn[availableSpawn] = CardLvl1[randomCard];
+							CanSpawn[availableSpawn] = true;
+							Spawn = true;
+							CanMakeDamage = true;
+							listOfPlayerCard.CanDamage = true;
+						
+						}
 					}	
 			}
 		CanGiveCard = false;

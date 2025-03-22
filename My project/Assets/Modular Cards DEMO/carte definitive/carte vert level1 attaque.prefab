@@ -901,6 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 6
   CardHealth: 10
+  WeakDamage: 2
   CardHealthGameObjectEnnemi: {fileID: 1584540762342330411}
   CardAttackGameObjectEnnemi: {fileID: 2796403519355778261}
   CardHealthTextEnnemi: {fileID: 0}

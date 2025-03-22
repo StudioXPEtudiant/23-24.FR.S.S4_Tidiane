@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 6
   CardHealth: 10
-  WeakDamage: 0
+  WeakDamage: 2
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 4705432613122305107}
   CardAttackGameObject: {fileID: 864410377760606821}
@@ -243,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardDamage: 5
   CardHealth: 10
+  WeakDamage: 0
   CardHealthGameObjectEnnemi: {fileID: 4705432613122305107}
   CardAttackGameObjectEnnemi: {fileID: 864410377760606821}
   CardHealthTextEnnemi: {fileID: 0}
