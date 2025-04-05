@@ -571,13 +571,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295c07ea532d0e84e82abc3996e92bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardDamage: 4
   CardHealth: 10
-  WeakDamage: 2
+  WeakDamage: 1
   ButtonTourSuivant: {fileID: 0}
   CardHealthGameObject: {fileID: 5799768752033494021}
   CardAttackGameObject: {fileID: 7725005673863166206}
   ThisCard: {fileID: 5339731875521947880}
+  CardDamage: 4
+  negativeEffect: 1
   ElementType: {fileID: 7845427040885989643}
   Weak: {fileID: 8348906183506395977}
   makeDamage:
