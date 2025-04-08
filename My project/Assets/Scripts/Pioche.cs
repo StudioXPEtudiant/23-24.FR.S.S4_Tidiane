@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Pioche : MonoBehaviour
 {
 	public GameObject[] SpawnPoint;
@@ -11,106 +12,108 @@ public class Pioche : MonoBehaviour
 	[SerializeField] private int availableSpawn = -1;
 	public List<GameObject> PlayerPiocheSpawn = new List<GameObject>();
 	[SerializeField] private bool CanSpawnMaxCard;
-	
-	public GameObject SpawnCard;	
-    public bool CanGiveCard = true;
-    public ListOfPlayerCard listOfPlayerCard;
+
+	public GameObject SpawnCard;
+	public bool CanGiveCard = true;
+	public ListOfPlayerCard listOfPlayerCard;
 	public bool Spawn;
 	public Button pioche;
 	public bool ifAllTrue;
 	public bool CanMakeDamage;
-	
+
 	public float MaxTentative = -1;
-	
-    void Start()
-    {
-	    CardToSpawn = new GameObject[SpawnPoint.Length];
-	    CanSpawnMaxCard = true;
-	    
+
+	void Start()
+	{
+		CardToSpawn = new GameObject[SpawnPoint.Length];
+		CanSpawnMaxCard = true;
+
 		CanSpawn = new bool [SpawnPoint.Length];
 		ifAllTrue = true;
 
 		for (int i = 0; i < CanSpawn.Length; i++)
-			{
-				CanSpawn[i] = false;
-			}
+		{
+			CanSpawn[i] = false;
+		}
 
 		CanGiveCard = true;
 		Spawn = false;
 		CanMakeDamage = false;
-    }
+	}
 
-    
-    void Update()
-    {
-	    libererSpawn();
-    }
+
+	void Update()
+	{
+		libererSpawn();
+	}
 
 	public void TakeCard()
-{
+	{
 		if (CanGiveCard)
+		{
+
+			int randomSpawn = Random.Range(0, SpawnPoint.Length);
+
+
+			for (int i = 0; i < SpawnPoint.Length; i++)
 			{
-				
-				int randomSpawn = Random.Range(0, SpawnPoint.Length);
-				
-				
-				for (int i = 0; i < SpawnPoint.Length; i++)
-					{
-						if (!CanSpawn[i])
-							{
-								availableSpawn = i;
-					
-							}
-					}
-
-				if (availableSpawn != -1)
+				if (!CanSpawn[i])
 				{
-<<<<<<< HEAD
-					int randomCard = Random.Range(0, CardLvl1.Length);
+					availableSpawn = i;
 
-					if (PlayerPiocheSpawn.Contains(CardLvl1[randomCard]))
+				}
+			}
+
+			if (availableSpawn != -1)
+			{
+//<<<<<<< HEAD
+				int randomCard = Random.Range(0, CardLvl1.Length);
+
+				if (PlayerPiocheSpawn.Contains(CardLvl1[randomCard]))
+				{
+					CanSpawnMaxCard = false;
+
+
+					for (int i = 0; i > MaxTentative; i++)
 					{
-						CanSpawnMaxCard = false;
+						int randomCardTry2 = Random.Range(0, CardLvl1.Length);
 
-
-						for (int i = 0; i > MaxTentative; i++)
+						if (!PlayerPiocheSpawn.Contains(CardLvl1[randomCardTry2]))
 						{
-							int randomCardTry2 = Random.Range(0, CardLvl1.Length);
-							
-							if (!PlayerPiocheSpawn.Contains(CardLvl1[randomCardTry2]))
-							{
-								SpawnCard = Instantiate(CardLvl1[randomCardTry2],
-									SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
-								PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
-								CardToSpawn[availableSpawn] = CardLvl1[randomCardTry2];
-								CanSpawn[availableSpawn] = true;
-								Spawn = true;
-								CanMakeDamage = true;
-								listOfPlayerCard.CanDamage = true;
-								CanSpawnMaxCard = false;
-								
-								listOfPlayerCard.TourSuivant.interactable = true;
-								
-								break;
-							}
+							SpawnCard = Instantiate(CardLvl1[randomCardTry2],
+								SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
+							PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
+							CardToSpawn[availableSpawn] = CardLvl1[randomCardTry2];
+							CanSpawn[availableSpawn] = true;
+							Spawn = true;
+							CanMakeDamage = true;
+							listOfPlayerCard.CanDamage = true;
+							CanSpawnMaxCard = false;
 
-							if (i == PlayerPiocheSpawn.Count)
-							{
-								break;
-							}
-=======
+							listOfPlayerCard.TourSuivant.interactable = true;
+
+							break;
+						}
+
+						if (i == PlayerPiocheSpawn.Count)
+						{
+							break;
+						}
+
+//=======
 						if (CanSpawnMaxCard)
-						{	
+						{
 							int randomCard = Random.Range(0, CardLvl1.Length);
-				 			SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
-							PlayerPiocheSpawn.Add(CardLvl1[randomCard]);//randomCardrandomCard
+							SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position,
+								Quaternion.identity);
+							PlayerPiocheSpawn.Add(CardLvl1[randomCard]); //randomCardrandomCard
 							CardToSpawn[availableSpawn] = CardLvl1[randomCard];
 							CanSpawn[availableSpawn] = true;
 							Spawn = true;
 							CanMakeDamage = true;
 							listOfPlayerCard.CanDamage = true;
->>>>>>> a359217ff5e36a225241d3501cffa123ad0801a0
-							
+//>>>>>>> a359217ff5e36a225241d3501cffa123ad0801a0
+
 						}
 					}
 
@@ -121,46 +124,47 @@ public class Pioche : MonoBehaviour
 
 					if (CanSpawnMaxCard)
 					{
-								SpawnCard = Instantiate(CardLvl1[randomCard],
-									SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
-								PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
-								CardToSpawn[availableSpawn] = CardLvl1[randomCard];
-								CanSpawn[availableSpawn] = true;
-								Spawn = true;
-								CanMakeDamage = true;
-								listOfPlayerCard.CanDamage = true;
-								CanSpawnMaxCard = false;
-								listOfPlayerCard.TourSuivant.interactable = true;
+						SpawnCard = Instantiate(CardLvl1[randomCard],
+							SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
+						PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
+						CardToSpawn[availableSpawn] = CardLvl1[randomCard];
+						CanSpawn[availableSpawn] = true;
+						Spawn = true;
+						CanMakeDamage = true;
+						listOfPlayerCard.CanDamage = true;
+						CanSpawnMaxCard = false;
+						listOfPlayerCard.TourSuivant.interactable = true;
 					}
 				}
-				
 
-				
-			}
-		CanGiveCard = false;
-		pioche.interactable = false;
-}
 
-	public void libererSpawn()
-	{
-		if (availableSpawn == 0)
-		{
-			for(int i = 0; i < CanSpawn.Length; i++)
-			{
-				CanSpawn[i] = false;
+
 			}
-					      
+
+			CanGiveCard = false;
+			pioche.interactable = false;
 		}
 	}
 
-	private void Spawn2()
-	{
-		
+	public void libererSpawn()
+		{
+			if (availableSpawn == 0)
+			{
+				for (int i = 0; i < CanSpawn.Length; i++)
+				{
+					CanSpawn[i] = false;
+				}
+
+			}
+		}
+
+		private void Spawn2()
+		{
+
+		}
+
+
 	}
-	
-	
-	
-}
 
 
 
