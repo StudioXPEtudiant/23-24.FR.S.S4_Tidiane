@@ -2127,7 +2127,7 @@ MonoBehaviour:
   piocheEnnemi: {fileID: 561578131}
   pioche: {fileID: 8202847156005279687}
   playCarteEnnemi: {fileID: 1043961382}
-  listOfPlayerCard: {fileID: 0}
+  listOfPlayerCard: {fileID: 1182176022}
   CanDamage: 0
   barreDeVieManager: {fileID: 9480880}
 --- !u!1 &1065153217
@@ -2297,7 +2297,7 @@ GameObject:
   - component: {fileID: 1182176022}
   m_Layer: 0
   m_Name: makeDamage
-  m_TagString: tourSuivantButton
+  m_TagString: MakeDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2332,12 +2332,18 @@ MonoBehaviour:
   CarteToPlay: []
   ListSize: 4
   CanGiveCardEnnemi: 0
-  TourSuivant: {fileID: 1558651039}
+  hasNegative: 0
+  ApplyNegatif: 0
+  maxNegative: 0
+  hasPositive: 0
+  ApplyPositiv: 0
+  maxPositiv: 0
   PlayerPlayCarte: []
   PlayerHand: []
   pioche: {fileID: 8202847156005279687}
   piocheEnnemi: {fileID: 561578131}
   barreDeVieManager: {fileID: 9480880}
+  TourSuivant: {fileID: 1558651039}
   CanDamage: 0
 --- !u!1 &1284288782
 GameObject:
@@ -4078,9 +4084,17 @@ PrefabInstance:
       propertyPath: SpawnPoint.Array.data[8]
       value: 
       objectReference: {fileID: 161551158}
+    - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
+      propertyPath: PlayerPiocheSpawn.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9193516224871459816, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: m_Name
       value: piochejoueur
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193516224871459816, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
+      propertyPath: m_TagString
+      value: pioche
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9194283374565320539, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}

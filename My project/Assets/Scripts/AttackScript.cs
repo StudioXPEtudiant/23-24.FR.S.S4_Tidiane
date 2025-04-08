@@ -5,6 +5,9 @@ using UnityEngine.Events;
 using TMPro;
 public class AttackScript : MonoBehaviour
 {
+	[SerializeField] private ParticleSystem particleSystem;
+	private ParticleSystem.EmissionModule emission;
+	private ParticleSystem.MainModule main;
 	
 	[SerializeField] private float CardHealth;
 	[SerializeField] private float WeakDamage;
@@ -25,7 +28,8 @@ public class AttackScript : MonoBehaviour
 	public bool CanMakeDamage; 
 	public BarreDeVieManager barreDeVieManager;   
 	public string tag;
-	
+
+	[SerializeField] private Pioche pioche;
 	private bool CanClick;
 	private bool CanDamageWithoutWeak;	
 
@@ -38,11 +42,19 @@ public class AttackScript : MonoBehaviour
 		ButtonTourSuivant = GameObject.FindWithTag("tourSuivantButton");
 		CanClick = true;
 		CanMakeDamage = false;
+
+		emission = particleSystem.emission;
+		main = particleSystem.main;
     }
 
     
     void Update()
     {
+	    if (ActualHealth <= 0)
+	    {
+		   
+	    }
+	    
 	    if (ThisCard.tag == "card")
 	    {
 		    TMP_Text CardHealthText = CardHealthGameObject.GetComponent<TMP_Text>();
@@ -164,17 +176,35 @@ public class AttackScript : MonoBehaviour
 
 	    }
 				if (ActualHealth < 0)
-            	{
-             	Destroy(gameObject);
+            	{ 
+		            ActiveDeathEffect();
+		            StartCoroutine(CanActivateDeathEffect());
+             		//Destroy(gameObject);
             	}
 
 				if (ActualHealth == 0)
             	{
-             	Destroy(gameObject);
+		            ActiveDeathEffect();
+		            StartCoroutine(CanActivateDeathEffect());
+             	
             	}
     }
  
-	
+    public void ActiveDeathEffect()
+    {
+	    emission.rateOverTime = 400f;
+	    main.startSpeed = 0.76f;
+	  particleSystem.Play();
+    }
 
+    private IEnumerator CanActivateDeathEffect()
+    {
+	    yield return new WaitForSeconds(3f);
+	    Destroy(gameObject);
+    }
+    
+    
+    //
+// switch peut remplacer if
     
 }
