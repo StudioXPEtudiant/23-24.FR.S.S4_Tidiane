@@ -66,7 +66,7 @@ public class Pioche : MonoBehaviour
 
 			if (availableSpawn != -1)
 			{
-//<<<<<<< HEAD
+<<<<<<< HEAD
 				int randomCard = Random.Range(0, CardLvl1.Length);
 
 				if (PlayerPiocheSpawn.Contains(CardLvl1[randomCard]))
@@ -100,7 +100,7 @@ public class Pioche : MonoBehaviour
 							break;
 						}
 
-//=======
+=======
 						if (CanSpawnMaxCard)
 						{
 							int randomCard = Random.Range(0, CardLvl1.Length);
@@ -112,7 +112,7 @@ public class Pioche : MonoBehaviour
 							Spawn = true;
 							CanMakeDamage = true;
 							listOfPlayerCard.CanDamage = true;
-//>>>>>>> a359217ff5e36a225241d3501cffa123ad0801a0
+>>>>>>> a359217ff5e36a225241d3501cffa123ad0801a0
 
 						}
 					}
