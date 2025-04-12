@@ -19,7 +19,8 @@ public class PlayCarte : MonoBehaviour
 	
 	private Vector2 Saved;	
 	private bool PosCard;
-	
+	private GameObject ListOfPlayerCardGameObject;
+		
     void Start()
     {
      	 Saved = transform.position;
@@ -91,6 +92,9 @@ public class PlayCarte : MonoBehaviour
 
 							if (CanMoveCard == true)
 								{
+									
+									
+									
 									CanMove = true;	
 									Vector3 cardPos = CardToPlay.transform.position;
 
@@ -102,7 +106,12 @@ public class PlayCarte : MonoBehaviour
 									colision = null;
 									PosCard = false;
 									CanMoveCard = false;
-												
+
+									if (CanMoveCard == false)
+									{
+											ListOfPlayerCardGameObject = GameObject.FindGameObjectWithTag("MakeDamage");
+											ListOfPlayerCardGameObject.GetComponent<ListOfPlayerCard>().CanRemoveObjectFromList();
+									}
 								}
                			}        
 

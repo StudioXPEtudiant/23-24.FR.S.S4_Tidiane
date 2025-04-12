@@ -108,11 +108,9 @@ public class ListOfEnnemiCard : MonoBehaviour
 								barreDeVieManager.ActualiseHealthBarPlayer();
 								attackScriptEnnemi.CanMakeDamage = false;
 							}
-
-                		
 				
 						StartCoroutine(PlayerCanPlay());
-						TourSuivant.interactable = true;
+					//	listOfPlayerCard.TourSuivant.interactable = true;
          	  		}
         	}
     }
@@ -122,7 +120,7 @@ public class ListOfEnnemiCard : MonoBehaviour
         yield return new WaitForSeconds(4);
         pioche.pioche.interactable = true;
 		pioche.CanGiveCard = true;
-		
+		listOfPlayerCard.TourSuivant.interactable = false;
     }
     
     

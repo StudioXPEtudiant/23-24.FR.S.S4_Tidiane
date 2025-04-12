@@ -9,7 +9,7 @@ public class ListOfPlayerCard : MonoBehaviour
     [SerializeField] private GameObject[] CarteToPlay;
     [SerializeField] private float ListSize = 4;
     [SerializeField] private bool CanGiveCardEnnemi;
-	[SerializeField] private Button TourSuivant;
+
     [SerializeField] private bool hasNegative;
     [SerializeField] private bool ApplyNegatif;
     public float maxNegative;
@@ -23,11 +23,12 @@ public class ListOfPlayerCard : MonoBehaviour
     public Pioche pioche;
 	public PiocheEnnemi piocheEnnemi;
     public BarreDeVieManager barreDeVieManager;
-    
+    public Button TourSuivant;
     public bool CanDamage;
     
     void Start()
     {
+        TourSuivant.interactable = false;
         CanGiveCardEnnemi = false;
         CanDamage = false;
         hasNegative = false;
@@ -65,13 +66,15 @@ public class ListOfPlayerCard : MonoBehaviour
                               CanDamage = true;
                           }                                         
                    }
+
+                   
                 
                }
     }
 
-    public void CanMakeDamage()
+    public void CanRemoveObjectFromList()
     {
-        
+      //  pioche.PlayerPiocheSpawn.Remove(pioche.SpawnCard);
     }
     
     public void ListCard()
