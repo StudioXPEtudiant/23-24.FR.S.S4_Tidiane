@@ -15,6 +15,7 @@ TagManager:
   - FireCard
   - NegativeEffect
   - PositiveEffect
+  - MakeDamage
   layers:
   - Default
   - TransparentFX

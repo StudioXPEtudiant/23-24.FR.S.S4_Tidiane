@@ -23,12 +23,13 @@ public class Pioche : MonoBehaviour
 	public bool ifAllTrue;
 	public bool CanMakeDamage;
 
+	[SerializeField] private int randomCard2;
 	public float MaxTentative = -1;
 
 	void Start()
 	{
 		CardToSpawn = new GameObject[SpawnPoint.Length];
-		CanSpawnMaxCard = true;
+		CanSpawnMaxCard = false;
 
 		CanSpawn = new bool [SpawnPoint.Length];
 		ifAllTrue = true;
@@ -70,8 +71,8 @@ public class Pioche : MonoBehaviour
 			{
 //<<<<<<< HEAD
 				int randomCard = Random.Range(0, CardLvl1.Length);
-				int randomCard2 = Random.Range(0, TryCardLvl1.Count);
-				
+				//int 
+				randomCard2 = Random.Range(0, TryCardLvl1.Count);
 			//	if (PlayerPiocheSpawn.Contains(CardLvl1[randomCard]))
 				//{
 					CanSpawnMaxCard = false;
@@ -83,72 +84,59 @@ public class Pioche : MonoBehaviour
 
 						//if (!PlayerPiocheSpawn.Contains(CardLvl1[randomCardTry2]))
 						//{
-							SpawnCard = Instantiate (CardLvl1[randomCard2], //randomCardTry2
-								SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
-							PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
-							CardToSpawn[availableSpawn] = CardLvl1[randomCard2];//randomCardTry2
-							CanSpawn[availableSpawn] = true;
-							Spawn = true;
-							CanMakeDamage = true;
-							listOfPlayerCard.CanDamage = true;
-							CanSpawnMaxCard = false;
-							TryCardLvl1.RemoveAt(randomCard2);
+							//SpawnCard = Instantiate (CardLvl1[randomCard2], //randomCardTry2
+							//	SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
+							//PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
+							//CardToSpawn[availableSpawn] = CardLvl1[randomCard2];//randomCardTry2
+							//CanSpawn[availableSpawn] = true;
+							//Spawn = true;
+							//CanMakeDamage = true;
+							//listOfPlayerCard.CanDamage = true;
+							//CanSpawnMaxCard = false;
+							//TryCardLvl1.RemoveAt(randomCard2);
 				
 							listOfPlayerCard.TourSuivant.interactable = true;
 							
 							//break;
 					//}
-
 						//if (i == PlayerPiocheSpawn.Count)
 						//{
 						//	break;
 						//}
 
-//=======
-						//if (CanSpawnMaxCard)
-						//{
-							//int randomCard = Random.Range(0, CardLvl1.Length);
-							//SpawnCard = Instantiate(CardLvl1[randomCard], SpawnPoint[availableSpawn].transform.position,
-								//Quaternion.identity);
-							//PlayerPiocheSpawn.Add(CardLvl1[randomCard]); //randomCardrandomCard
-							//CardToSpawn[availableSpawn] = CardLvl1[randomCard];
-							//CanSpawn[availableSpawn] = true;
-							//Spawn = true;
-							//CanMakeDamage = true;
-							//listOfPlayerCard.CanDamage = true;
-//>>>>>>> a359217ff5e36a225241d3501cffa123ad0801a0
 
-						//}
-					//}
-
-					if (!PlayerPiocheSpawn.Contains(CardLvl1[randomCard]))
+					if (!PlayerPiocheSpawn.Contains(CardLvl1[randomCard2]))
 					{
 						CanSpawnMaxCard = true;
 					}
-
+					else
+					{
+						CanSpawnMaxCard = false;
+					}
+					
 					if (CanSpawnMaxCard)
 					{
-						SpawnCard = Instantiate(CardLvl1[randomCard],
+						SpawnCard = Instantiate(TryCardLvl1[randomCard2], //CardLvl1[randomCard2],//randomCard
 							SpawnPoint[availableSpawn].transform.position, Quaternion.identity);
 						PlayerPiocheSpawn.Add(SpawnCard); //randomCardrandomCard
-						CardToSpawn[availableSpawn] = CardLvl1[randomCard];
+						CardToSpawn[availableSpawn] = CardLvl1[randomCard2];//randomCard
 						CanSpawn[availableSpawn] = true;
 						Spawn = true;
 						CanMakeDamage = true;
 						listOfPlayerCard.CanDamage = true;
 						CanSpawnMaxCard = false;
 						listOfPlayerCard.TourSuivant.interactable = true;
-						CardLvl1[randomCard] = null;
+						//CardLvl1[randomCard] = null;
+						TryCardLvl1.RemoveAt(randomCard2);
+						listOfPlayerCard.TourSuivant.interactable = true;
 					}
 				}
 
 
-
-			}
-
 			CanGiveCard = false;
-			pioche.interactable = false;
 		}
+		pioche.interactable = false;
+	}
 	
 
 	public void libererSpawn()

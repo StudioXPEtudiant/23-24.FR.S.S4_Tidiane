@@ -38,7 +38,7 @@ public class ListOfEnnemiCard : MonoBehaviour
         
         GameObject[] tag = GameObject.FindGameObjectsWithTag("EnnemiCard");
 
-              if (playCarteEnnemi.CanMove == true )
+              if (playCarteEnnemi.CanMove)
               	{
                   	EnnemiPlayCarte.Add(playCarteEnnemi.cardToPlay);
                   	EnnemiHand.Remove(piocheEnnemi.CardInstantiate);
@@ -101,14 +101,15 @@ public class ListOfEnnemiCard : MonoBehaviour
 				AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
             		if (obj != null && obj.tag == "EnnemiCard")
             		{				
-							attackScriptEnnemi.CanMakeDamage = true;	
-						if(attackScriptEnnemi.hit.collider == null)
+							attackScriptEnnemi.CanMakeDamage = true;
+							
+						if(attackScriptEnnemi.hit.collider != null && attackScriptEnnemi.hit.collider.tag == "Plateau" && attackScriptEnnemi.hit.collider.tag != "card")//== null
 							{
 									barreDeVieManager.CanActualiseHealthBarPlayer = true;
 								barreDeVieManager.ActualiseHealthBarPlayer();
 								attackScriptEnnemi.CanMakeDamage = false;
 							}
-				
+						
 						StartCoroutine(PlayerCanPlay());
 					//	listOfPlayerCard.TourSuivant.interactable = true;
          	  		}

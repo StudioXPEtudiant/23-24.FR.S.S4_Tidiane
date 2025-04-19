@@ -192,9 +192,9 @@ public class AttackScript : MonoBehaviour
  
     public void ActiveDeathEffect()
     {
-	    emission.rateOverTime = 400f;
-	    main.startSpeed = 0.76f;
-	  particleSystem.Play();
+	  //  emission.rateOverTime = 400f;
+	  //  main.startSpeed = 0.76f;
+	  //particleSystem.Play();
     }
 
     private IEnumerator CanActivateDeathEffect()
