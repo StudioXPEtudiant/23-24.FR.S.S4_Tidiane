@@ -16,6 +16,8 @@ TagManager:
   - NegativeEffect
   - PositiveEffect
   - MakeDamage
+  - Pioche
+  - EnnemiPioche
   layers:
   - Default
   - TransparentFX

@@ -34,6 +34,7 @@ public class PlayCarteEnnemi : MonoBehaviour
     
     void Start()
     {
+       
          AssigneGameObject = new GameObject[4];
          ReferenceCase = new GameObject[2];
          CanSpawn = new bool [4];
@@ -59,7 +60,7 @@ public class PlayCarteEnnemi : MonoBehaviour
 
     public void FirstTurn()
     {
-     
+       
     }
 
     public IEnumerator EnnemiTurn()
@@ -70,7 +71,6 @@ public class PlayCarteEnnemi : MonoBehaviour
 
         if (CanGiveCard)
         {
-
             int randomSpawn = Random.Range(0, SpawnPointEnnemi.Length);
             int randomCard = Random.Range(0, EnnemiHand.Count);
 
@@ -99,6 +99,10 @@ public class PlayCarteEnnemi : MonoBehaviour
                 {
                     if (CardPlay.Count < ListSize)
                     {
+                        attackScriptEnnemi = piocheEnnemi.CardInstantiate.GetComponent<AttackScriptEnnemi>();
+                        
+                        attackScriptEnnemi.LibererSpawnEnnemi();
+                     
                         piocheEnnemi.CardInstantiate.transform.position = 
                         SpawnPointEnnemi[availableSpawn].transform.position;
                         

@@ -20,7 +20,10 @@ public class PlayCarte : MonoBehaviour
 	private Vector2 Saved;	
 	private bool PosCard;
 	private GameObject ListOfPlayerCardGameObject;
-		
+
+	private Pioche pioche;
+	public int SpawnPosition;
+	
     void Start()
     {
      	 Saved = transform.position;
@@ -28,6 +31,7 @@ public class PlayCarte : MonoBehaviour
 	 	CanMoveCard = true;
 		CanMove = false;
 		LibererSpawnPioche = false;
+		pioche = GameObject.FindGameObjectWithTag("Pioche").GetComponent<Pioche>();
     }
 
     
@@ -46,7 +50,6 @@ public class PlayCarte : MonoBehaviour
 	private void OnMouseDown()
 		{
     		Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				
 		}
 
 	private void OnMouseDrag()
@@ -102,7 +105,9 @@ public class PlayCarte : MonoBehaviour
 									cardPos.y = colision.transform.position.y;
 					
 									CardToPlay.transform.position = cardPos;
-
+									
+									libererSpawn();
+									
 									colision = null;
 									PosCard = false;
 									CanMoveCard = false;
@@ -113,12 +118,22 @@ public class PlayCarte : MonoBehaviour
 											ListOfPlayerCardGameObject.GetComponent<ListOfPlayerCard>().CanRemoveObjectFromList();
 									}
 								}
-               			}        
-
-			if (PosCard == true)
-				{
-					CardToPlay.transform.position = Saved;	
-				}								
+               			}
+					if (PosCard == true)
+					{
+						CardToPlay.transform.position = Saved;	
+					}								
+				}
 		}
+
+	private void libererSpawn()
+	{
+		int FreeSpawn = SpawnPosition;
+			
+			pioche.availableSpawn2.Add(FreeSpawn);
+			pioche.CanSpawn[FreeSpawn] = false;
+			pioche.CurrentSpawnPosition++;
 	}
+	
+	
 }

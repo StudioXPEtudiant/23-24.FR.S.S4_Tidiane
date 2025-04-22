@@ -34,12 +34,17 @@ public class AttackScriptEnnemi : MonoBehaviour
 	public ListOfEnnemiCard listOfEnnemiCard;
 	public PiocheEnnemi piocheEnnemi;    
 	public bool CanDestroy;
-
+    public int SpawnCardPosition;
+   // public bool canLibererSpawn;
+    
     void Start()
     {
         ActualHealth = CardHealth;
         CanShowRaycast = true;
 		CanMakeDamage = false;
+       // canLibererSpawn = false;
+        
+        piocheEnnemi = GameObject.FindGameObjectWithTag("EnnemiPioche").GetComponent<PiocheEnnemi>();
     }
 
     
@@ -55,8 +60,12 @@ public class AttackScriptEnnemi : MonoBehaviour
 	    }
 	   
 	    
-        if (CanMakeDamage == true)
+        if (CanMakeDamage)
         {
+           // if (canLibererSpawn)
+            //{
+                //LibererSpawnEnnemi();
+           // }
             if (hit.collider != null)
             {
                 if (hit.transform.gameObject.tag == "card")
@@ -165,5 +174,16 @@ public class AttackScriptEnnemi : MonoBehaviour
             hit = Physics2D.Raycast(origin, Vector2.down, 3);
             Debug.DrawRay(origin, Vector2.down * 3, Color.red);
       	}
-    }    
+    }
+
+    public void LibererSpawnEnnemi()
+    {
+        int freeSpawnEnnemi = SpawnCardPosition;
+        
+        piocheEnnemi.ActualSpawn.Add(freeSpawnEnnemi);
+        piocheEnnemi.CanSpawn[freeSpawnEnnemi] = false;
+        piocheEnnemi.ActualSpawnPosition++;
+
+    }
+    
 }

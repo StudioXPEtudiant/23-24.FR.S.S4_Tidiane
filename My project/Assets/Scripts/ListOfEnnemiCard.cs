@@ -17,7 +17,7 @@ public class ListOfEnnemiCard : MonoBehaviour
 	public bool CanDamage;
 	
 	public BarreDeVieManager barreDeVieManager;
-
+	public AttackScriptEnnemi attackScriptEnnemi;
 
 	void Start()
     {
@@ -98,7 +98,7 @@ public class ListOfEnnemiCard : MonoBehaviour
     {
         	foreach (GameObject obj in EnnemiPlayCarte)
         	{
-				AttackScriptEnnemi attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
+				 attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
             		if (obj != null && obj.tag == "EnnemiCard")
             		{				
 							attackScriptEnnemi.CanMakeDamage = true;
@@ -111,8 +111,7 @@ public class ListOfEnnemiCard : MonoBehaviour
 							}
 						
 						StartCoroutine(PlayerCanPlay());
-					//	listOfPlayerCard.TourSuivant.interactable = true;
-         	  		}
+					}
         	}
     }
     
