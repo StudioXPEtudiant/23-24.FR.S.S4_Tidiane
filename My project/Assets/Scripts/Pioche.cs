@@ -21,7 +21,8 @@ public class Pioche : MonoBehaviour
 	public GameObject SpawnCard;
 	public bool Spawn;
 	public int CurrentSpawnPosition = 0;
-		
+	private int Spawn2;
+	
 	[Header("PiocheVariables")]
 	
 	[SerializeField] private int randomCard2;
@@ -53,7 +54,7 @@ public class Pioche : MonoBehaviour
 			availableSpawn2.Add(i);
 		}
 
-		CurrentSpawnPosition = availableSpawn2[8];
+		Spawn2 = availableSpawn2.Max();
 		CanGiveCard = true;
 		Spawn = false;
 		CanMakeDamage = false;
@@ -84,7 +85,7 @@ public class Pioche : MonoBehaviour
 
 			if (availableSpawn != -1)
 			{
-				int Spawn2 = CurrentSpawnPosition;
+				//= CurrentSpawnPosition;
 				randomCard2 = Random.Range(0, TryCardLvl1.Count);
 
 					CanSpawnMaxCard = false;
@@ -109,7 +110,9 @@ public class Pioche : MonoBehaviour
 						CardToSpawn[Spawn2] = CardLvl1[randomCard2];
 						CanSpawn[Spawn2] = true;
 						availableSpawn2.Remove(Spawn2);
-						CurrentSpawnPosition--;
+						Spawn2 = availableSpawn2.Max();
+						//CurrentSpawnPosition--;
+						
 						Spawn = true;
 						CanMakeDamage = true;
 						listOfPlayerCard.CanDamage = true;

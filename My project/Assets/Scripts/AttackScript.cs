@@ -86,7 +86,8 @@ public class AttackScript : MonoBehaviour
 													CanMakeDamage = false;
 												}						
 										}
-											
+
+							        
 										
 										if (ElementType.tag == "PlantCard" && attackScriptEnnemi.Weak.tag == "PlantCard")
 											{
@@ -98,6 +99,9 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
+
+															attackScriptEnnemi.CardDamage -= WeakDamage;
+															
 															CanMakeDamage = false;
 														}
 														
@@ -111,6 +115,9 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															
+															attackScriptEnnemi.CardDamage -= WeakDamage;
+															
 															CanMakeDamage = false;
 														}
 													}
@@ -123,6 +130,9 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															
+															attackScriptEnnemi.CardDamage -= WeakDamage;
+															
 															CanMakeDamage = false;
 														}
 													}
@@ -135,6 +145,9 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
+															
+															attackScriptEnnemi.CardDamage -= WeakDamage;
+															
 															CanMakeDamage = false;
 														}
 													}//CardDamage *= WeakDamage;

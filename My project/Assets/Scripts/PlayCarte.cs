@@ -23,6 +23,7 @@ public class PlayCarte : MonoBehaviour
 
 	private Pioche pioche;
 	public int SpawnPosition;
+	public int FreeSpawn;
 	
     void Start()
     {
@@ -128,11 +129,12 @@ public class PlayCarte : MonoBehaviour
 
 	private void libererSpawn()
 	{
-		int FreeSpawn = SpawnPosition;
+		FreeSpawn = SpawnPosition;
 			
 			pioche.availableSpawn2.Add(FreeSpawn);
 			pioche.CanSpawn[FreeSpawn] = false;
-			pioche.CurrentSpawnPosition++;
+			
+			pioche.CurrentSpawnPosition = FreeSpawn;
 	}
 	
 	

@@ -7,7 +7,7 @@ using TMPro;
 
 public class AttackScriptEnnemi : MonoBehaviour
 {
-    [SerializeField] private float CardDamage;
+    public float CardDamage;
     [SerializeField] private float CardHealth;	
     [SerializeField] private float WeakDamage;
 
@@ -86,6 +86,8 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                              attackScript.ActualHealth -= CardDamage;
                              attackScript.ActualHealth -= WeakDamage;
+
+                             attackScript.CardDamage--;
                         }
                        
                     }
@@ -96,6 +98,8 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                             attackScript.ActualHealth -= CardDamage;
                             attackScript.ActualHealth -= WeakDamage;
+                            
+                            attackScript.CardDamage--;
                         }
                     }
 
@@ -105,6 +109,8 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                             attackScript.ActualHealth -= CardDamage;
                             attackScript.ActualHealth -= WeakDamage;
+                            
+                            attackScript.CardDamage--;
                         }
                     }
 
@@ -114,6 +120,8 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                             attackScript.ActualHealth -= CardDamage;
                             attackScript.ActualHealth -= WeakDamage;
+                            
+                            attackScript.CardDamage--;
                         }
                     }
 
@@ -182,7 +190,7 @@ public class AttackScriptEnnemi : MonoBehaviour
         
         piocheEnnemi.ActualSpawn.Add(freeSpawnEnnemi);
         piocheEnnemi.CanSpawn[freeSpawnEnnemi] = false;
-        piocheEnnemi.ActualSpawnPosition++;
+        piocheEnnemi.ActualSpawnPosition = freeSpawnEnnemi;
 
     }
     
