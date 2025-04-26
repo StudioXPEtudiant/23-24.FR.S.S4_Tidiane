@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour
 {
-    public void ChangeScene(string menu du début)
+    public void ChangeScene()
     {
-        SceneManager.LoadScene(partie);
+        SceneManager.LoadScene("partie");
     }
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameStart : MonoBehaviour
+public class GameEnd : MonoBehaviour
 {
-    public void ChangeScene(string partie)
+    public void ChangeScene()
     {
-        SceneManager.LoadScene(menu fin);
+        SceneManager.LoadScene("menu_fin");
     }
 }
