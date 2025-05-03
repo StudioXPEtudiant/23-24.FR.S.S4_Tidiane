@@ -38,6 +38,9 @@ public class AttackScript : MonoBehaviour
 
 	[SerializeField] private TMP_Text CardHealthText;
 	[SerializeField] private TMP_Text CardAttackText;
+
+	[SerializeField] private GameObject animatorGameObject;
+	[SerializeField] private Animator animatorInCard;
 	
     void Start()
     {
@@ -51,6 +54,8 @@ public class AttackScript : MonoBehaviour
 		emission = particleSystem.emission;
 		main = particleSystem.main;
 		MaxWeakDamage = 0;
+
+		animatorInCard = animatorGameObject.GetComponent<Animator>();
     }
 
     
@@ -238,9 +243,12 @@ public class AttackScript : MonoBehaviour
 	    yield return new WaitForSeconds(3f);
 	    Destroy(gameObject);
     }
+
+    public void OnClick()
+    {
+	    animatorInCard.SetTrigger("slot1");
+    }
     
-    
-    //
 // switch peut remplacer if
     
 }
