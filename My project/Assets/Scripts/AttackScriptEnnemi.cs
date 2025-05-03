@@ -8,9 +8,11 @@ using TMPro;
 public class AttackScriptEnnemi : MonoBehaviour
 {
     public float CardDamage;
-    [SerializeField] private float CardHealth;	
+    public float CardHealth;	
     [SerializeField] private float WeakDamage;
-
+    [SerializeField] private float cardStartDamage;
+    [SerializeField] private float MaxWeakDamage;
+    
     [SerializeField] private GameObject CardHealthGameObjectEnnemi;
     [SerializeField] private GameObject CardAttackGameObjectEnnemi;
     [SerializeField] private TMP_Text CardHealthTextEnnemi;
@@ -42,7 +44,9 @@ public class AttackScriptEnnemi : MonoBehaviour
         ActualHealth = CardHealth;
         CanShowRaycast = true;
 		CanMakeDamage = false;
-       // canLibererSpawn = false;
+
+        cardStartDamage = CardDamage;
+        MaxWeakDamage = 0;
         
         piocheEnnemi = GameObject.FindGameObjectWithTag("EnnemiPioche").GetComponent<PiocheEnnemi>();
     }
@@ -58,14 +62,14 @@ public class AttackScriptEnnemi : MonoBehaviour
 		     CardHealthTextEnnemi.text = ActualHealth.ToString();
 		     CardAttackTextEnnemi.text = CardDamage.ToString();   
 	    }
-	   
-	    
+
+        if (hit.collider == null)
+        {
+            CardDamage = cardStartDamage;
+        }
+        
         if (CanMakeDamage)
         {
-           // if (canLibererSpawn)
-            //{
-                //LibererSpawnEnnemi();
-           // }
             if (hit.collider != null)
             {
                 if (hit.transform.gameObject.tag == "card")
@@ -76,6 +80,7 @@ public class AttackScriptEnnemi : MonoBehaviour
                         if(ElementType.tag != attackScript.Weak.tag)
                         {
                              attackScript.ActualHealth -= CardDamage;
+                             MaxWeakDamage = 0;
                         } 
                     }
                     CanMakeDamage = false;
@@ -86,8 +91,14 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                              attackScript.ActualHealth -= CardDamage;
                              attackScript.ActualHealth -= WeakDamage;
-
-                             attackScript.CardDamage--;
+                             
+                             if (MaxWeakDamage == 0)
+                             {
+                                  attackScript.CardDamage--;
+                                  CardDamage++;
+                                  MaxWeakDamage = 1;
+                             }
+                            
                         }
                        
                     }
@@ -98,8 +109,13 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                             attackScript.ActualHealth -= CardDamage;
                             attackScript.ActualHealth -= WeakDamage;
-                            
-                            attackScript.CardDamage--;
+
+                            if (MaxWeakDamage == 0)
+                            {
+                                attackScript.CardDamage--;
+                                CardDamage++;
+                                MaxWeakDamage = 1;
+                            }
                         }
                     }
 
@@ -109,8 +125,13 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                             attackScript.ActualHealth -= CardDamage;
                             attackScript.ActualHealth -= WeakDamage;
-                            
-                            attackScript.CardDamage--;
+
+                            if (MaxWeakDamage == 0)
+                            {
+                                attackScript.CardDamage--;
+                                CardDamage++;
+                                MaxWeakDamage = 1;
+                            }
                         }
                     }
 
@@ -120,8 +141,13 @@ public class AttackScriptEnnemi : MonoBehaviour
                         {
                             attackScript.ActualHealth -= CardDamage;
                             attackScript.ActualHealth -= WeakDamage;
-                            
-                            attackScript.CardDamage--;
+
+                            if (MaxWeakDamage == 0)
+                            {
+                                attackScript.CardDamage--;
+                                CardDamage++;
+                                MaxWeakDamage = 1;
+                            }
                         }
                     }
 

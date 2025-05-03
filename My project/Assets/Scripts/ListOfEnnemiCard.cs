@@ -19,9 +19,12 @@ public class ListOfEnnemiCard : MonoBehaviour
 	public BarreDeVieManager barreDeVieManager;
 	public AttackScriptEnnemi attackScriptEnnemi;
 
+	private float MaxHealthBarDamage;
+	
 	void Start()
     {
         CanDamage = false;
+        MaxHealthBarDamage = 0;
     }
 
    
@@ -44,6 +47,8 @@ public class ListOfEnnemiCard : MonoBehaviour
                   	EnnemiHand.Remove(piocheEnnemi.CardInstantiate);
                   	playCarteEnnemi.CanMove = false;
 				  	ListCardEnnemi();
+				    StartCoroutine(WaitBeforeDamage());
+				    MaxHealthBarDamage = 0;
                  }
 
        foreach (GameObject obj in EnnemiPlayCarte)
@@ -61,14 +66,13 @@ public class ListOfEnnemiCard : MonoBehaviour
                 	}
 					
 		            if (playCarteEnnemi.ReferenceCase[1] == null) 
-					 {//0
+		            {//0
 						playCarteEnnemi.CanSpawn[0] = false;
-					 }
+		            }
 		            
 		            if (playCarteEnnemi.AssigneGameObject[1] == null)
 		            {
 			            playCarteEnnemi.CanSpawn[1] = false;
-			            
 		            }
 		            
 		            if (playCarteEnnemi.AssigneGameObject[2] == null)
@@ -96,32 +100,52 @@ public class ListOfEnnemiCard : MonoBehaviour
 
     private void ListCardEnnemi()
     {
-        	foreach (GameObject obj in EnnemiPlayCarte)
-        	{
-				 attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
-            		if (obj != null && obj.tag == "EnnemiCard")
-            		{				
-							attackScriptEnnemi.CanMakeDamage = true;
-							
-						if(attackScriptEnnemi.hit.collider != null && attackScriptEnnemi.hit.collider.tag == "Plateau" && attackScriptEnnemi.hit.collider.tag != "card")//== null
-							{
-									barreDeVieManager.CanActualiseHealthBarPlayer = true;
-								barreDeVieManager.ActualiseHealthBarPlayer();
-								attackScriptEnnemi.CanMakeDamage = false;
-							}
-						
-						StartCoroutine(PlayerCanPlay());
-					}
-        	}
+        	//foreach (GameObject obj in EnnemiPlayCarte)
+        	//{
+				// attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
+            		//if (obj != null && obj.tag == "EnnemiCard")
+		           // {
+			           
+					//}
+        	//}
     }
     
     public IEnumerator PlayerCanPlay()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(0);
         pioche.pioche.interactable = true;
 		pioche.CanGiveCard = true;
 		listOfPlayerCard.TourSuivant.interactable = false;
     }
     
+    private IEnumerator WaitBeforeDamage()
+    {
+	    yield return new WaitForSeconds(2);
+	    
+	   if (MaxHealthBarDamage == 0)
+	   {
+			foreach (GameObject obj in EnnemiPlayCarte)
+			{
+				attackScriptEnnemi = obj.GetComponent<AttackScriptEnnemi>();
+		     
+				attackScriptEnnemi.CanMakeDamage = true;
+				
+				if(attackScriptEnnemi.hit.collider != null && attackScriptEnnemi.hit.collider.tag == "Plateau")//== null
+				{
+			    
+				       Debug.Log(attackScriptEnnemi.gameObject.name);
+				       barreDeVieManager.CanActualiseHealthBarPlayer = true;
+				       barreDeVieManager.ActualiseHealthBarPlayer();
+				       attackScriptEnnemi.CanMakeDamage = false;
+				       MaxHealthBarDamage = 1;
+				       Debug.Log(attackScriptEnnemi.hit.collider.name);
+			    }
+			 
+		    }
+	   }
+	   
+	   StartCoroutine(PlayerCanPlay());
+	   
+    }
     
 }

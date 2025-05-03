@@ -12,12 +12,15 @@ public class AttackScript : MonoBehaviour
 	[SerializeField] private float CardHealth;
 	[SerializeField] private float WeakDamage;
 	[SerializeField] private GameObject ButtonTourSuivant;
-
+	[SerializeField] private float MaxWeakDamage;
+	
 	[SerializeField] private GameObject CardHealthGameObject;
 	[SerializeField] private GameObject CardAttackGameObject;
 
 	[SerializeField] private GameObject ThisCard;
 
+	[SerializeField] private float CardStartDamage;
+	
 	public float CardDamage;
 	public float negativeEffect = 1;
 	public GameObject ElementType;
@@ -43,18 +46,16 @@ public class AttackScript : MonoBehaviour
 		CanClick = true;
 		CanMakeDamage = false;
 
+		CardStartDamage = CardDamage;
+		
 		emission = particleSystem.emission;
 		main = particleSystem.main;
+		MaxWeakDamage = 0;
     }
 
     
     void Update()
     {
-	    if (ActualHealth <= 0)
-	    {
-		   
-	    }
-	    
 	    if (ThisCard.tag == "card")
 	    {
 		    TMP_Text CardHealthText = CardHealthGameObject.GetComponent<TMP_Text>();
@@ -66,9 +67,9 @@ public class AttackScript : MonoBehaviour
 
 	    if (playCarte.hit.collider == null)
 	    {
-		    CanMakeDamage = false;
+		    CanMakeDamage = false;  
+		    CardDamage = CardStartDamage;
 	    }
-	    
 	    
 		if (CanMakeDamage == true)
 		{
@@ -84,6 +85,8 @@ public class AttackScript : MonoBehaviour
 												{
 													attackScriptEnnemi.ActualHealth -= CardDamage;
 													CanMakeDamage = false;
+													//CardDamage = CardStartDamage;
+													MaxWeakDamage = 0;
 												}						
 										}
 
@@ -100,7 +103,12 @@ public class AttackScript : MonoBehaviour
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
 
-															attackScriptEnnemi.CardDamage -= WeakDamage;
+															if (MaxWeakDamage == 0)
+															{
+																attackScriptEnnemi.CardDamage -= WeakDamage;
+																CardDamage += WeakDamage;
+																MaxWeakDamage = 1;
+															}
 															
 															CanMakeDamage = false;
 														}
@@ -115,8 +123,13 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
-															
-															attackScriptEnnemi.CardDamage -= WeakDamage;
+
+															if (MaxWeakDamage == 0)
+															{
+																attackScriptEnnemi.CardDamage -= WeakDamage;
+																CardDamage += WeakDamage;
+																MaxWeakDamage = 1;
+															}
 															
 															CanMakeDamage = false;
 														}
@@ -130,8 +143,13 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
-															
-															attackScriptEnnemi.CardDamage -= WeakDamage;
+
+															if (MaxWeakDamage == 0)
+															{
+																attackScriptEnnemi.CardDamage -= WeakDamage;
+																CardDamage += WeakDamage;
+																MaxWeakDamage = 1;
+															}
 															
 															CanMakeDamage = false;
 														}
@@ -145,8 +163,13 @@ public class AttackScript : MonoBehaviour
 														{
 															attackScriptEnnemi.ActualHealth -= CardDamage;
 															attackScriptEnnemi.ActualHealth -= WeakDamage;
-															
-															attackScriptEnnemi.CardDamage -= WeakDamage;
+
+															if (MaxWeakDamage == 0)
+															{
+																attackScriptEnnemi.CardDamage -= WeakDamage;
+																CardDamage += WeakDamage;
+																MaxWeakDamage = 1;
+															}
 															
 															CanMakeDamage = false;
 														}
@@ -183,7 +206,7 @@ public class AttackScript : MonoBehaviour
 												}
 											}
 										}
-										
+							        
 								    	}
         				}
 
