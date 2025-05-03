@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+
 public class AttackScript : MonoBehaviour
 {
 	[SerializeField] private ParticleSystem particleSystem;
@@ -55,7 +57,7 @@ public class AttackScript : MonoBehaviour
 		main = particleSystem.main;
 		MaxWeakDamage = 0;
 
-		animatorInCard = animatorGameObject.GetComponent<Animator>();
+		animatorInCard = GetComponentInChildren<Animator>();
     }
 
     
@@ -244,9 +246,9 @@ public class AttackScript : MonoBehaviour
 	    Destroy(gameObject);
     }
 
-    public void OnClick()
+    public void OnButtonClick()
     {
-	    animatorInCard.SetTrigger("slot1");
+	    animatorInCard.SetTrigger("attaque");
     }
     
 // switch peut remplacer if

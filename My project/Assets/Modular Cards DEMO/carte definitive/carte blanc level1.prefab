@@ -1334,7 +1334,7 @@ MonoBehaviour:
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
   animatorGameObject: {fileID: 6887000522293261272}
-  animatorInCard: {fileID: 0}
+  animatorInCard: {fileID: 4001303789098493913}
 --- !u!114 &314402160268877669
 MonoBehaviour:
   m_ObjectHideFlags: 0
