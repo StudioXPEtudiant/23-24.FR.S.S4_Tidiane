@@ -131,6 +131,9 @@ public class ListOfPlayerCard : MonoBehaviour
                                         }
                                         
 		              	   obj.GetComponent<AttackScript>().CanMakeDamage = true;
+                           
+                           attackScript.OnButtonClick();
+                           
                            StartCoroutine(EnnemiCanPlay());
                            CanGiveCardEnnemi = false;
                            CanDamage = false;
