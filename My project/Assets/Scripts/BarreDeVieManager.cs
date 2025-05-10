@@ -25,7 +25,7 @@ public class BarreDeVieManager : MonoBehaviour
 	if(PlayerHealthBar != null)
 		{
 			PlayerHealthBar.maxValue = HealthBarLifePlayer;
-	    	PlayerHealthBar.value = HealthBdPlayer;
+	    	PlayerHealthBar.value = HealthBarLifePlayer;
 	    }
 
 		if(EnnemiHealthBar != null)
@@ -54,7 +54,7 @@ public class BarreDeVieManager : MonoBehaviour
     public void ActualiseHealthBarPlayer()
     {
 	    if (CanActualiseHealthBarPlayer == true)
-	ddqqqqqqqqqqq	{
+		{
 	   		HealthBarLifePlayer -= HealthBarDamagePlayer;
 			PlayerHealthBar.value = HealthBarLifePlayer;
 			CanActualiseHealthBarPlayer = false;
