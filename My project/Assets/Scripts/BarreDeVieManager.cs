@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class BarreDeVieManager : MonoBehaviour
 {
 	[SerializeField] private float HealthBarLifePlayer;
@@ -25,7 +25,7 @@ public class BarreDeVieManager : MonoBehaviour
 	if(PlayerHealthBar != null)
 		{
 			PlayerHealthBar.maxValue = HealthBarLifePlayer;
-	    	PlayerHealthBar.value = HealthBarLifePlayer;
+	    	PlayerHealthBar.value = HealthBdPlayer;
 	    }
 
 		if(EnnemiHealthBar != null)
@@ -38,13 +38,23 @@ public class BarreDeVieManager : MonoBehaviour
     
     void Update()
     {
-	   
+	           if (HealthBarLifePlayer <= 0)
+        {
+            HealthBarLifePlayer = 0;
+			SceneManager.LoadScene("Win");
+        }
+
+        if (HealthBarLifeEnnemi <= 0)
+        {
+            HealthBarLifeEnnemi = 0;
+			SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void ActualiseHealthBarPlayer()
     {
 	    if (CanActualiseHealthBarPlayer == true)
-		{
+	ddqqqqqqqqqqq	{
 	   		HealthBarLifePlayer -= HealthBarDamagePlayer;
 			PlayerHealthBar.value = HealthBarLifePlayer;
 			CanActualiseHealthBarPlayer = false;
