@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 8321347481425704282}
   - component: {fileID: 7644723045853360052}
   - component: {fileID: 5449782531875562526}
+  - component: {fileID: 6606831908522188347}
   m_Layer: 0
   m_Name: carte rouge level1 attaque
   m_TagString: card
@@ -336,6 +337,8 @@ MonoBehaviour:
   pioche: {fileID: 0}
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
+  animatorGameObject: {fileID: 0}
+  animatorInCard: {fileID: 0}
 --- !u!114 &7644723045853360052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +390,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivateOutline: {fileID: 519339749754113237}
+--- !u!114 &6606831908522188347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475890528421391809}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e4c7738cfe4b94588c5bd66027d2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstCardClick: {fileID: 0}
+  SecondCardClick: {fileID: 0}
+  ElementType: {fileID: 3804004409617992951}
 --- !u!1 &1779595185619888899
 GameObject:
   m_ObjectHideFlags: 0
