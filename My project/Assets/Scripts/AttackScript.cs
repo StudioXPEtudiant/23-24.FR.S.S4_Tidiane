@@ -94,6 +94,7 @@ public class AttackScript : MonoBehaviour
 													CanMakeDamage = false;
 													//CardDamage = CardStartDamage;
 													MaxWeakDamage = 0;
+													animatorInCard.SetTrigger("fin attaque");
 												}						
 										}
 
@@ -115,6 +116,7 @@ public class AttackScript : MonoBehaviour
 																attackScriptEnnemi.CardDamage -= WeakDamage;
 																CardDamage += WeakDamage;
 																MaxWeakDamage = 1;
+																animatorInCard.SetTrigger("fin attaque");
 															}
 															
 															CanMakeDamage = false;
@@ -136,6 +138,7 @@ public class AttackScript : MonoBehaviour
 																attackScriptEnnemi.CardDamage -= WeakDamage;
 																CardDamage += WeakDamage;
 																MaxWeakDamage = 1;
+																animatorInCard.SetTrigger("fin attaque");
 															}
 															
 															CanMakeDamage = false;
@@ -156,6 +159,7 @@ public class AttackScript : MonoBehaviour
 																attackScriptEnnemi.CardDamage -= WeakDamage;
 																CardDamage += WeakDamage;
 																MaxWeakDamage = 1;
+																animatorInCard.SetTrigger("fin attaque");
 															}
 															
 															CanMakeDamage = false;
@@ -176,6 +180,7 @@ public class AttackScript : MonoBehaviour
 																attackScriptEnnemi.CardDamage -= WeakDamage;
 																CardDamage += WeakDamage;
 																MaxWeakDamage = 1;
+																animatorInCard.SetTrigger("fin attaque");
 															}
 															
 															CanMakeDamage = false;

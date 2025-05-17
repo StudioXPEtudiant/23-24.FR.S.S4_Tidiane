@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstCardClick: {fileID: 0}
   SecondCardClick: {fileID: 0}
-  ElementType: {fileID: 7508725931840213548}
+  SpawnCardViolette: {fileID: 0}
 --- !u!1 &7152550104491480215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,7 +1381,7 @@ GameObject:
   - component: {fileID: 488210400794153570}
   - component: {fileID: 8675354231288476790}
   m_Layer: 0
-  m_Name: visuel (1)
+  m_Name: visuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
