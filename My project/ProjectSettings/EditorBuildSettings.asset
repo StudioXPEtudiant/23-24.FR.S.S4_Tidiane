@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/zone de d\xE9part.unity"
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/partie.unity
+    guid: e797bb326450ec1409f6c8b7bb1a6e95
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 42afecd7e4fb6c8468442c2539a7d77d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 98dbe10ad5363314695f0a22a3cdc191
   m_configObjects: {}
