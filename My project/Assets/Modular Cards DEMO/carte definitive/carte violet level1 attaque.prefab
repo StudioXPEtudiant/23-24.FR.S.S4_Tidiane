@@ -232,6 +232,8 @@ MonoBehaviour:
   pioche: {fileID: 0}
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
+  animatorGameObject: {fileID: 0}
+  animatorInCard: {fileID: 0}
 --- !u!114 &-3445728080864453887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +583,7 @@ GameObject:
   - component: {fileID: 3350862974801686618}
   - component: {fileID: 7050915859354950768}
   m_Layer: 0
-  m_Name: visuel (1)
+  m_Name: visuel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
