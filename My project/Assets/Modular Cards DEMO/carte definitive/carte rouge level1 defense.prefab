@@ -460,6 +460,7 @@ GameObject:
   - component: {fileID: 8463454123093619482}
   - component: {fileID: -247838313879188514}
   - component: {fileID: 3843558810997827754}
+  - component: {fileID: 4003780699297561197}
   m_Layer: 0
   m_Name: carte rouge level1 defense
   m_TagString: card
@@ -605,6 +606,8 @@ MonoBehaviour:
   pioche: {fileID: 0}
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
+  animatorGameObject: {fileID: 0}
+  animatorInCard: {fileID: 0}
 --- !u!114 &-247838313879188514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +659,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivateOutline: {fileID: 3686940609084416397}
+--- !u!114 &4003780699297561197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339731875521947880}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e4c7738cfe4b94588c5bd66027d2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstCardClick: {fileID: 0}
+  SecondCardClick: {fileID: 0}
+  ElementType: {fileID: 7845427040885989643}
 --- !u!1 &5695554289051770602
 GameObject:
   m_ObjectHideFlags: 0

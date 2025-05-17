@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: -1673432296751451982}
   - component: {fileID: -8966077714165175444}
   - component: {fileID: 5464231352113990679}
+  - component: {fileID: 736120443062091546}
   m_Layer: 0
   m_Name: carte bleu level1 defense
   m_TagString: card
@@ -812,6 +813,8 @@ MonoBehaviour:
   pioche: {fileID: 0}
   CardHealthText: {fileID: 0}
   CardAttackText: {fileID: 0}
+  animatorGameObject: {fileID: 0}
+  animatorInCard: {fileID: 0}
 --- !u!114 &-8966077714165175444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +866,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivateOutline: {fileID: 2726592257327791341}
+--- !u!114 &736120443062091546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3885445575196735187}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e4c7738cfe4b94588c5bd66027d2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstCardClick: {fileID: 0}
+  SecondCardClick: {fileID: 0}
+  ElementType: {fileID: 393744722501432577}
 --- !u!1 &4117115599719706641
 GameObject:
   m_ObjectHideFlags: 0
