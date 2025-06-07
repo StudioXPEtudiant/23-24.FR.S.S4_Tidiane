@@ -8,19 +8,25 @@ using UnityEngine.UI;
 
 public class FusionScript : MonoBehaviour
 {
-    [SerializeField] private GameObject FirstCardClick;
+    [SerializeField] private GameObject FirstCardClick = null;
     private int FirstCardMaxClick;
     
-    [SerializeField] private GameObject SecondCardClick;
-
+    [SerializeField] private GameObject SecondCardClick = null;
+    private int SecondCardMaxClick;
+    
     [SerializeField] private GameObject SpawnCardViolette;
-
+    [SerializeField] private GameObject SpawnCarteBlanche;
+    
     private PlayCarte playCarteFirstCardClick;
     private PlayCarte playCarteSecondCardClick;
+    
+    private string firstCardClickName = "";
+    private string SecondCardClickName = "";
     
     void Start()
     {
         FirstCardMaxClick = 0;
+        SecondCardMaxClick = 0;
     }
 
     
@@ -30,85 +36,95 @@ public class FusionScript : MonoBehaviour
         {
            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-           
-           if (hit)
+
+           if (hit && hit.collider.CompareTag("card"))
            {
-                if (FirstCardMaxClick == 0)
-                {
-                    FirstCardClick = hit.collider.gameObject;
-                    playCarteFirstCardClick = FirstCardClick.GetComponent<PlayCarte>();
-                }
-          
-                if (FirstCardMaxClick == 1)
-                {
-                    SecondCardClick = hit.collider.gameObject;
-                    playCarteSecondCardClick = SecondCardClick.GetComponent<PlayCarte>();
-                }
+               GameObject clickedCard = hit.collider.gameObject;
+               PlayCarte playCarte = clickedCard.GetComponent<PlayCarte>();
 
-                if (FirstCardMaxClick == 2)
-                {
-                    SecondCardClick = hit.collider.gameObject;
-                    playCarteSecondCardClick = SecondCardClick.GetComponent<PlayCarte>();
-                }
+               if (playCarte.CanMoveCard == false)
+               {
+                   string elementTag = ElementType(clickedCard);
 
-                if (playCarteFirstCardClick.CanMoveCard == false)
-                {
-                    if (FirstCardClick.CompareTag("card"))
-                    {
-                        foreach (Transform elementType in FirstCardClick.transform)
-                        {
-                            if (elementType.CompareTag("WaterCard") && FirstCardMaxClick == 0)
-                            {
-                                FirstCardMaxClick = 1;
-                                StartCoroutine(WaitBeforeResetFusion());
-                            }
-
-                            if (elementType.CompareTag("FireCard") && FirstCardMaxClick == 0)
-                            {
-                                FirstCardMaxClick = 2;
-                                StartCoroutine(WaitBeforeResetFusion());
-                            }
-
-                        }
-                    }
-                }
-
-                if (playCarteSecondCardClick.CanMoveCard == false)
-                {
-                    if (SecondCardClick.CompareTag("card"))
-                    {
-                        foreach (Transform elementType in SecondCardClick.transform)
-                        {
-                            if (elementType.CompareTag("FireCard") && FirstCardMaxClick == 1)
-                            {
-                               StopCoroutine(WaitBeforeResetFusion());
-                                Instantiate(SpawnCardViolette, FirstCardClick.transform.position, Quaternion.identity);
-                            Destroy(FirstCardClick);
-                            Destroy(SecondCardClick);
-                            FirstCardMaxClick = 0;
-                            
-                            }
-                            if (elementType.CompareTag("WaterCard") && FirstCardMaxClick == 2)
-                            {
-                                StopCoroutine(WaitBeforeResetFusion());
-                                Instantiate(SpawnCardViolette, FirstCardClick.transform.position, Quaternion.identity);
-                            Destroy(FirstCardClick);
-                            Destroy(SecondCardClick);
-                            FirstCardMaxClick = 0;
-                            
-                            }
-                        
-                        }
-                    } 
-                }
-                
+                   if (FirstCardClick == null)
+                   {
+                       FirstCardClick = clickedCard;
+                       firstCardClickName = elementTag;
+                       StartCoroutine(WaitBeforeResetFusion());
+                   }
+                   else if(SecondCardClick == null && clickedCard != FirstCardClick)
+                   {
+                       SecondCardClick = clickedCard;
+                       SecondCardClickName = elementTag;
+                       
+                       StopCoroutine(WaitBeforeResetFusion());
+                       
+                       Fusion();
+                   }
+               }
            }
         }
     }
 
+   string ElementType(GameObject card)
+    {
+        foreach (Transform elementType in card.transform)
+        {
+            if (elementType.CompareTag("FireCard")) return "FireCard";
+            if (elementType.CompareTag("WaterCard")) return "WaterCard";
+            if (elementType.CompareTag("PlantCard")) return "PlantCard";
+            if (elementType.CompareTag("FoudreCard")) return "FoudreCard"; 
+        }
+
+        return "";
+    }
+
+   private void Fusion()
+   {
+       if (firstCardClickName == "" || SecondCardClickName == "") return;
+
+       if ((firstCardClickName == "WaterCard" && SecondCardClickName == "FireCard") || (firstCardClickName == "FireCard" && SecondCardClickName == "WaterCard"))
+       {
+           Instantiate(SpawnCarteBlanche, FirstCardClick.transform.position, Quaternion.identity);
+           Destroy(FirstCardClick);
+           Destroy(SecondCardClick);
+           
+           FirstCardClick = null;
+           SecondCardClick = null;
+           
+           firstCardClickName = "";
+           SecondCardClickName= "";
+       }
+       else if ((firstCardClickName == "PlantCard" && SecondCardClickName == "FoudreCard") || (firstCardClickName == "FoudreCard" && SecondCardClickName == "PlantCard"))
+       {
+           Instantiate(SpawnCardViolette, FirstCardClick.transform.position, Quaternion.identity);
+          Destroy(FirstCardClick);
+          Destroy(SecondCardClick);
+           
+           FirstCardClick = null;
+           SecondCardClick = null;
+           
+           firstCardClickName = "";
+           SecondCardClickName= "";
+       }
+       else
+       {
+           FirstCardClick = null;
+           SecondCardClick = null;
+           
+           firstCardClickName = "";
+           SecondCardClickName= "";
+       }
+   }
+
     private IEnumerator WaitBeforeResetFusion()
     {
         yield return new WaitForSeconds(2);
-        FirstCardMaxClick = 0;
+        
+        FirstCardClick = null;
+        SecondCardClick = null;
+           
+        firstCardClickName = "";
+        SecondCardClickName= "";
     }
 }
