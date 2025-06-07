@@ -36,20 +36,7 @@ public class BarreDeVieManager : MonoBehaviour
     }
 
     
-    void Update()
-    {
-	           if (HealthBarLifePlayer <= 0)
-        {
-            HealthBarLifePlayer = 0;
-			SceneManager.LoadScene("Win");
-        }
 
-        if (HealthBarLifeEnnemi <= 0)
-        {
-            HealthBarLifeEnnemi = 0;
-			SceneManager.LoadScene("GameOver");
-        }
-    }
 
     public void ActualiseHealthBarPlayer()
     {
@@ -71,4 +58,17 @@ public class BarreDeVieManager : MonoBehaviour
 	    }
     }
     
+	void Update()
+    {
+	    if (HealthBarLifePlayer <= 0)
+        {
+            HealthBarLifePlayer = 0;
+			SceneManager.LoadScene("Win");
+        }
+		else if (HealthBarLifeEnnemi <= 0)
+        {
+            HealthBarLifeEnnemi = 0;
+			SceneManager.LoadScene("GameOver");
+        }
+    }
 }
