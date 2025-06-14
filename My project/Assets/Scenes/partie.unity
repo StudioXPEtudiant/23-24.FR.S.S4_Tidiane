@@ -1296,7 +1296,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3690725074139401542, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_Value
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3690725074139401542, guid: dfddc0c9e9f847f499df579ac44e42bd, type: 3}
       propertyPath: m_MaxValue
@@ -1572,7 +1572,6 @@ MonoBehaviour:
   - {fileID: 349370475698506116, guid: 8b7ddd6e0e2c4e44f9813d314241f68c, type: 3}
   - {fileID: 5354269334163378435, guid: 34ccae0d9f7e9de4096efac9f015147e, type: 3}
   CardLvl1:
-  - {fileID: 9197893473822668141, guid: be055fb760e710d48ba208f411dcef9e, type: 3}
   - {fileID: 6983751038419607460, guid: d51e57eb33c4f6744befca8ed4430c4e, type: 3}
   - {fileID: 3885445575196735187, guid: 5656ebae3d8604549871feddf4ac0e7e, type: 3}
   - {fileID: 200114418971950898, guid: 84597f2ebac3bda42b753858497640ad, type: 3}
@@ -4145,7 +4144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.size
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: SpawnPoint.Array.size
@@ -4170,39 +4169,39 @@ PrefabInstance:
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[0]
       value: 
-      objectReference: {fileID: 9197893473822668141, guid: be055fb760e710d48ba208f411dcef9e, type: 3}
+      objectReference: {fileID: 6983751038419607460, guid: d51e57eb33c4f6744befca8ed4430c4e, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[1]
       value: 
-      objectReference: {fileID: 6983751038419607460, guid: d51e57eb33c4f6744befca8ed4430c4e, type: 3}
+      objectReference: {fileID: 3885445575196735187, guid: 5656ebae3d8604549871feddf4ac0e7e, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[2]
       value: 
-      objectReference: {fileID: 3885445575196735187, guid: 5656ebae3d8604549871feddf4ac0e7e, type: 3}
+      objectReference: {fileID: 200114418971950898, guid: 84597f2ebac3bda42b753858497640ad, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[3]
       value: 
-      objectReference: {fileID: 200114418971950898, guid: 84597f2ebac3bda42b753858497640ad, type: 3}
+      objectReference: {fileID: 3231529282571011442, guid: df0213d60c36bad4aba1145f9b940aef, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[4]
       value: 
-      objectReference: {fileID: 3231529282571011442, guid: df0213d60c36bad4aba1145f9b940aef, type: 3}
+      objectReference: {fileID: 1475890528421391809, guid: af3a2ecadce76704394c51b99c52b5ea, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[5]
       value: 
-      objectReference: {fileID: 1475890528421391809, guid: af3a2ecadce76704394c51b99c52b5ea, type: 3}
+      objectReference: {fileID: 5339731875521947880, guid: b2ceb8634a24cbe4587f737f387be4c9, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[6]
       value: 
-      objectReference: {fileID: 5339731875521947880, guid: b2ceb8634a24cbe4587f737f387be4c9, type: 3}
+      objectReference: {fileID: 5690200463508217218, guid: 090333c4078c9a94c9581f53ebad02af, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[7]
       value: 
-      objectReference: {fileID: 5690200463508217218, guid: 090333c4078c9a94c9581f53ebad02af, type: 3}
+      objectReference: {fileID: 8762302000647445895, guid: 0370d1c34d9324b45a9d7acbe47fa2ad, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[8]
       value: 
-      objectReference: {fileID: 8762302000647445895, guid: 0370d1c34d9324b45a9d7acbe47fa2ad, type: 3}
+      objectReference: {fileID: 9197893473822668141, guid: be055fb760e710d48ba208f411dcef9e, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[9]
       value: 
@@ -4213,7 +4212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.size
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: CardLvl1.Array.data[10]
@@ -4258,35 +4257,35 @@ PrefabInstance:
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[0]
       value: 
-      objectReference: {fileID: 9197893473822668141, guid: be055fb760e710d48ba208f411dcef9e, type: 3}
+      objectReference: {fileID: 6983751038419607460, guid: d51e57eb33c4f6744befca8ed4430c4e, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[1]
       value: 
-      objectReference: {fileID: 6983751038419607460, guid: d51e57eb33c4f6744befca8ed4430c4e, type: 3}
+      objectReference: {fileID: 3885445575196735187, guid: 5656ebae3d8604549871feddf4ac0e7e, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[2]
       value: 
-      objectReference: {fileID: 3885445575196735187, guid: 5656ebae3d8604549871feddf4ac0e7e, type: 3}
+      objectReference: {fileID: 200114418971950898, guid: 84597f2ebac3bda42b753858497640ad, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[3]
       value: 
-      objectReference: {fileID: 200114418971950898, guid: 84597f2ebac3bda42b753858497640ad, type: 3}
+      objectReference: {fileID: 3231529282571011442, guid: df0213d60c36bad4aba1145f9b940aef, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[4]
       value: 
-      objectReference: {fileID: 3231529282571011442, guid: df0213d60c36bad4aba1145f9b940aef, type: 3}
+      objectReference: {fileID: 1475890528421391809, guid: af3a2ecadce76704394c51b99c52b5ea, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[5]
       value: 
-      objectReference: {fileID: 1475890528421391809, guid: af3a2ecadce76704394c51b99c52b5ea, type: 3}
+      objectReference: {fileID: 5339731875521947880, guid: b2ceb8634a24cbe4587f737f387be4c9, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[6]
       value: 
-      objectReference: {fileID: 5339731875521947880, guid: b2ceb8634a24cbe4587f737f387be4c9, type: 3}
+      objectReference: {fileID: 5690200463508217218, guid: 090333c4078c9a94c9581f53ebad02af, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[7]
       value: 
-      objectReference: {fileID: 5690200463508217218, guid: 090333c4078c9a94c9581f53ebad02af, type: 3}
+      objectReference: {fileID: 8762302000647445895, guid: 0370d1c34d9324b45a9d7acbe47fa2ad, type: 3}
     - target: {fileID: 9071508963319113034, guid: d45fb251f66be8a468ef8ca7df931088, type: 3}
       propertyPath: TryCardLvl1.Array.data[8]
       value: 
