@@ -35,9 +35,6 @@ public class BarreDeVieManager : MonoBehaviour
 	    	}
     }
 
-    
-
-
     public void ActualiseHealthBarPlayer()
     {
 	    if (CanActualiseHealthBarPlayer == true)
@@ -63,12 +60,12 @@ public class BarreDeVieManager : MonoBehaviour
 	    if (HealthBarLifePlayer <= 0)
         {
             HealthBarLifePlayer = 0;
-			SceneManager.LoadScene("Win");
+			SceneManager.LoadScene("GameOver");
         }
 		else if (HealthBarLifeEnnemi <= 0)
         {
             HealthBarLifeEnnemi = 0;
-			SceneManager.LoadScene("GameOver");
+			SceneManager.LoadScene("Win");
         }
     }
 }
